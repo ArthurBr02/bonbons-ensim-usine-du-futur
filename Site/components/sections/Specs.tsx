@@ -5,7 +5,7 @@ const SPECS = [
   { name: "Mécanisme", sub: "Roue de dosage usinée, libération par rotation manuelle.", val: "Manuel · 1 tour" },
   { name: "Dimensions", sub: "Hauteur totale, dôme inclus, sur socle pédestal.", val: "38 × 18 × 18 cm" },
   { name: "Poids", sub: "Pesé à vide, sans bonbons ni emballage.", val: "1,2 kg" },
-  { name: "Origine", sub: "Usiné, assemblé et calibré dans notre atelier en Île-de-France.", val: "Made in FR" },
+  { name: "Origine", sub: "Usiné, assemblé et calibré dans notre atelier en Loire-Atlantique.", val: "Made in FR" },
 ];
 
 export default function Specs() {

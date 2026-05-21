@@ -19,7 +19,7 @@ export default function About() {
             <span>Usinage CN</span>
             <span>Verre borosilicate</span>
             <span>Anodisation</span>
-            <span>Made in Île-de-France</span>
+            <span>Made in Loire-Atlantique</span>
           </div>
         </div>
         <div>

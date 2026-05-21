@@ -27,9 +27,9 @@
   --ink-3: #84807a;
   --hair: rgba(20, 19, 14, 0.10);
   --hair-2: rgba(20, 19, 14, 0.18);
-  --accent: #f5a623;
+  --accent: #FD5F9F;
   --accent-ink: #1a1303;
-  --candy-1: #f5a623;
+  --candy-1: #FD5F9F;
   --candy-2: #ff5a8a;
   --candy-3: #5dd6a8;
   --candy-4: #7c5cff;
@@ -84,7 +84,7 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(1200px 800px at 80% -10%, rgba(245, 166, 35, 0.08), transparent 60%),
+    radial-gradient(1200px 800px at 80% -10%, rgba(253, 95, 159, 0.08), transparent 60%),
     radial-gradient(1000px 700px at -10% 110%, rgba(124, 92, 255, 0.06), transparent 60%);
   transition: background 600ms ease;
 }

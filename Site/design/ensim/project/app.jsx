@@ -2,21 +2,21 @@
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "direction": "atelier",
-  "accent": "#f5a623",
+  "accent": "#FD5F9F",
   "displayFont": "Instrument Serif",
   "bodyFont": "Manrope",
   "drawerStyle": "glass"
 }/*EDITMODE-END*/;
 
 const ACCENT_OPTIONS = [
-  { val: '#f5a623', name: 'Caramel' },
+  { val: '#FD5F9F', name: 'Bonbon' },
   { val: '#ff5a8a', name: 'Fraise' },
   { val: '#5dd6a8', name: 'Pistache' },
   { val: '#7c5cff', name: 'Myrtille' },
   { val: '#0f1117', name: 'Encre' },
 ];
 const ACCENT_INK = {
-  '#f5a623': '#1a1303',
+  '#FD5F9F': '#1a1303',
   '#ff5a8a': '#2c0010',
   '#5dd6a8': '#082417',
   '#7c5cff': '#0d0628',
