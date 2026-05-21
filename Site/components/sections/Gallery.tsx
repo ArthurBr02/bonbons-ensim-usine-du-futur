@@ -1,3 +1,7 @@
+import Image from "next/image";
+
+const BASE = "https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-du-futur/main/Rendus";
+
 export default function Gallery() {
   return (
     <section id="gallery">
@@ -12,18 +16,19 @@ export default function Gallery() {
         </div>
         <div className="gallery">
           <div className="tile t1">
-            <div className="stripes" />
+            <Image src={`${BASE}/front.jpg`} alt="Vue frontale" fill style={{ objectFit: "cover" }} sizes="(max-width: 760px) 100vw, 40vw" priority />
             <span className="tag">01 · vue frontale</span>
           </div>
           <div className="tile t2">
-            <div className="stripes" />
+            <Image src={`${BASE}/dome.jpg`} alt="Dôme" fill style={{ objectFit: "cover" }} sizes="(max-width: 760px) 100vw, 30vw" />
             <span className="tag">02 · dôme</span>
           </div>
           <div className="tile t3">
-            <div className="stripes" />
+            <Image src={`${BASE}/base.jpg`} alt="Base" fill style={{ objectFit: "cover" }} sizes="(max-width: 760px) 100vw, 30vw" />
             <span className="tag">03 · base</span>
           </div>
           <div className="tile t4">
+            <Image src={`${BASE}/bonbons.jpg`} alt="Bonbons" fill style={{ objectFit: "cover" }} sizes="(max-width: 760px) 100vw, 60vw" />
             <span className="tag" style={{ color: "var(--ink)" }}>04 · bonbons</span>
           </div>
         </div>
