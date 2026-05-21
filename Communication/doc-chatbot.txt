@@ -1,0 +1,261 @@
+
+
+
+
+
+
+
+Cahier des charges
+
+
+
+
+Coco Bonbons ©
+Usine du futur
+
+
+
+
+Mai 2026
+
+4A INFO ALT
+
+
+
+
+
+
+Table des matières
+
+
+
+1. Table des matières	2
+2. Présentation Générale du Projet	3
+2.1. Contexte	3
+2.2. Objectifs globaux	3
+3. État de l'Art	3
+3.1. Analyse de l'existant	3
+3.2. Solutions technologiques actuelles	4
+3.3. Différenciation	4
+4. Spécifications fonctionnelles	5
+4.1. SF1 : Distribution de bonbons	5
+4.2. SF2 : Rechargement du réservoir	5
+4.3. SF3 : Ergonomie et utilisation	5
+4.4. SF4 : Site web	6
+4.5. SF5 : Personnalisation visuelle	6
+5. Contraintes	7
+5.1. Techniques	7
+5.2. Sanitaires et alimentaires	7
+6. Identité Visuelle et Charte Graphique	8
+6.1. Charte graphique de la machine	8
+6.2. Charte graphique du site web	8
+7. Approvisionnement et Logistique	8
+7.1. Approvisionnement des pièces	8
+Pièces fabriquées par impression 3D	8
+7.2. Gestion des stocks de bonbons	9
+7.3. Maintenance et SAV	9
+8. Pilotage de Projet (Triangle QCD)	9
+8.1. Coût	9
+8.2. Délai	9
+8.3. Qualité	10
+
+
+Présentation Générale du Projet
+
+
+Contexte
+
+Dans le cadre du module “Usine du Futur”, les 13 étudiants de 4A INFO ALT doivent réaliser un projet industriel complet mêlant conception mécanique, fabrication numérique et développement informatique. Le projet “Coco Bonbons” consiste à créer une machine distributrice de bonbons fonctionnelle, ergonomique et personnalisable. Cette réalisation permet de mettre en pratique plusieurs compétences : modélisation 3D, impression 3D, usinage CNC, développement web et gestion de projet. Le produit doit également respecter des contraintes techniques, sanitaires et esthétiques tout en proposant une expérience utilisateur simple et moderne.
+
+Objectifs globaux
+
+Le projet a pour objectif de concevoir une machine capable de distribuer des bonbons de manière fiable et sécurisée. Les étudiants doivent développer un mécanisme fonctionnel, fabriquer les différentes pièces, créer un site web de présentation et de commande, puis produire toute la documentation technique associée.
+
+État de l'Art
+
+
+Analyse de l'existant
+
+Le marché des distributeurs de bonbons propose aujourd’hui de nombreuses solutions adaptées à différents usages : domestiques, commerciaux ou événementiels. Les modèles les plus simples sont des distributeurs mécaniques fonctionnant grâce à une manivelle ou un levier rotatif. Ce système permet de libérer une petite quantité de bonbons sans alimentation électrique. Ces produits sont généralement appréciés pour leur simplicité, leur faible coût de fabrication et leur robustesse.
+
+D’autres distributeurs utilisent des technologies électroniques intégrant des capteurs de mouvement ou des boutons de commande. Lorsqu’une main est détectée, un moteur actionne automatiquement le mécanisme de distribution. Ces modèles offrent une utilisation plus moderne et hygiénique, car ils limitent le contact direct avec la machine. Certains dispositifs plus avancés intègrent également des écrans, des systèmes de paiement ou une connexion à une application mobile.
+
+Solutions technologiques actuelles
+
+Les distributeurs de bonbons actuels utilisent différentes technologies selon leur niveau de complexité, leur coût et leur usage. Les modèles mécaniques reposent principalement sur des systèmes simples comme des trappes rotatives, des ailettes ou des réservoirs tournants actionnés manuellement par une manivelle ou un levier. Ces mécanismes sont fiables, peu coûteux et ne nécessitent aucune alimentation électrique.
+
+Les distributeurs électroniques utilisent quant à eux des moteurs et des capteurs pour automatiser la distribution. Les capteurs infrarouges ou de proximité permettent de détecter la présence d’une main et d’actionner automatiquement le mécanisme. Certains modèles intègrent également des boutons de commande, des écrans tactiles ou des microcontrôleurs afin de gérer la quantité distribuée et améliorer l’expérience utilisateur.
+
+Concernant les systèmes de distribution, plusieurs technologies existent : vis sans fin, roue compartimentée, roue élévatrice, capsules individuelles ou distribution en vrac. Chaque solution présente des avantages différents en matière de précision, de coût et de facilité de fabrication.
+
+Enfin, certains distributeurs modernes proposent des fonctionnalités connectées comme le contrôle via smartphone, la programmation horaire ou le suivi à distance grâce à des applications mobiles et des objets connectés.
+
+Différenciation
+
+Le projet “Coco Bonbons” se distingue des distributeurs classiques par son approche centrée sur la personnalisation, la fabrication numérique et la simplicité d’utilisation. Contrairement à de nombreux modèles standardisés du marché, la machine permet au client de personnaliser l’apparence des pièces extérieures directement depuis le site web. Cette personnalisation peut concerner les couleurs, le design ou certains éléments visuels, tout en conservant un mécanisme interne standardisé afin de simplifier la fabrication et la maintenance.
+
+La machine est également pensée pour être légère et facilement transportable grâce à l’utilisation de pièces imprimées en 3D et de matériaux adaptés. Ses dimensions compactes permettent une utilisation sur un bureau, un comptoir ou lors d’événements.
+
+Le projet se différencie aussi par son intégration dans une démarche “usine du futur”. Il combine conception assistée par ordinateur, fabrication, usinage et développement web dans un même produit. Enfin, l’accent mis sur l’ergonomie, l’accessibilité et la maintenance rend la machine plus pratique et moderne que de nombreux distributeurs traditionnels.
+
+
+
+Spécifications fonctionnelles 
+
+
+SF1 : Distribution de bonbons
+
+La machine doit distribuer un à plusieurs bonbons à la fois par actionnement du levier rotatif, de façon fiable et répétable.
+La distribution doit être adaptée à des bonbons sphériques d'un diamètre compris entre 5 et 15 mm (type M&M’s).
+Les bonbons distribués doivent tomber dans une coupelle ou une zone de réception accessible à l'utilisateur, sans risque de chute au sol.
+Le mécanisme ne doit pas écraser ou endommager le bonbon lors de la distribution.
+
+SF2 : Rechargement du réservoir
+
+Le récipient doit pouvoir être retiré facilement par l'utilisateur, sans outil, par vissage/dévissage.
+La capacité du réservoir doit permettre de contenir au minimum 50 bonbons.
+Le bocal doit être transparent ou translucide afin de permettre la visibilité du niveau de remplissage sans démontage.
+L'assemblage bocal/socle doit assurer une étanchéité suffisante pour éviter la chute accidentelle des bonbons lors de la manipulation.
+
+SF3 : Ergonomie et utilisation
+
+Le levier rotatif doit tourner avec une résistance maîtrisée (effort raisonnable, sans risque de coincement).
+La machine doit être stable horizontalement, sans risque de basculement lors de l'actionnement.
+Les dimensions globales doivent rester compatibles avec un usage sur comptoir (hauteur max. ~30 cm, emprise ~15 cm de diamètre).
+
+SF4 : Site web
+
+Le site doit présenter le produit de manière attractive : visuels 3D ou photos de qualité, description des fonctionnalités, arguments de vente.
+Une page de commande ou de simulation d'achat doit permettre de sélectionner un produit, renseigner ses coordonnées et valider un panier (fonctionnement réel ou simulé).
+Le site doit comporter a minima : page d'accueil, page produit, page de commande/contact, mentions légales.
+Le site doit être responsive (consultable sur mobile, tablette et ordinateur).
+
+SF5 : Personnalisation visuelle
+
+La machine doit offrir la possibilité d'être personnalisée visuellement par le client, sur les éléments du corps en plastique.
+Seules les pièces extérieures sont concernées par la personnalisation : le mécanisme interne, le bocal et la visserie restent standardisés.
+La personnalisation est définie par le client via le site web (formulaire de commande) et prise en compte lors de la fabrication.
+
+Contraintes
+
+
+Techniques
+
+Le levier rotatif doit effectuer une rotation complète (360°) sans blocage.
+Le bocal doit se visser et se dévisser sur le corps de la machine sans jeu excessif.
+Les pièces doivent s'assembler avec des tolérances adaptées (jeu fonctionnel ≤ 0,3 mm pour les pièces mobiles).
+L'ensemble doit pouvoir être entièrement démonté et remonté pour maintenance, avec un nombre de pièces limité et identifié dans la notice technique.
+
+Sanitaires et alimentaires
+
+Tous les matériaux en contact direct avec les bonbons doivent être conformes aux normes CE de contact alimentaire et certifiés BPA free (ex. : PLA alimentaire, PETG, ABS alimentaire selon usage).
+Le bois utilisé ne doit pas avoir été traité chimiquement ou avoir été traité avec un vernis ou une huile certifié contact alimentaire.
+Les bois MDF standard sont exclus pour les pièces usinées.
+Les surfaces des composants usinés doivent être lisses, sans échardes ni fissures, et nettoyables à l'essuyage sec.
+Les surfaces internes du circuit de distribution doivent être lisses, sans recoins inaccessibles, pour permettre un nettoyage à sec ou à l'essuyage.
+Les pièces concernées doivent pouvoir être démontées pour nettoyage sans outillage spécifique.
+La machine ne doit pas exposer les bonbons stockés à l'environnement extérieur (poussières, humidité),  le bocal devant assurer une fermeture suffisante lorsqu'il est en position montée.
+
+Identité Visuelle et Charte Graphique
+
+
+Charte graphique de la machine
+
+Design global, couleurs, logo apposé, choix des matériaux visibles (look rétro, futuriste, épuré).
+
+Charte graphique du site web
+
+Maquette, palette de couleurs, typographie, adaptabilité mobile (responsive design), cohérence visuelle avec la machine physique.
+
+
+Approvisionnement et Logistique
+
+
+Approvisionnement des pièces
+
+L'ensemble des composants de la machine à bonbons est produit ou approvisionné selon trois modes distincts : 
+
+Fabrication interne par impression 3D
+Usinage sur une fraiseuse à commande numérique
+Achat
+
+Pièces fabriquées par impression 3D
+
+La majorité des pièces de la machine sont fabriquées en interne par impression 3D.
+Chaque pièce est d'abord modélisée sur logiciel CAO (SolidWorks), puis imprimée en filament.
+Les pièces concernées sont notamment : le corps de la machine, le levier de distribution et les éléments de guidage des bonbons.
+
+Pièces fabriquées par usinage
+
+Ces pièces sont usinées sur fraiseuse à commande numérique, à partir de fichiers de fabrication générés via le logiciel CAO.
+
+Le matériau utilisé est le bois (massif ou MDF certifié).
+La pièce concernée est le support avec la coupelle de réception.
+
+Pièces achetées
+
+Les composants achetés sont :
+Le bocal transparent : produit standard disponible en grande surface. Le bocal est en verre transparent et son filetage est compatible avec celui du corps de la machine.
+La visserie : boulons M3 et M4, inserts filetés, rondelles — disponibles en quincaillerie locale ou sur des plateformes en ligne (Amazon, AliExpress) avec un délai de livraison de 24 à 72 h.
+Les bonbons : approvisionnement en grande surface (M&M’s, bubblegum, …).
+
+
+
+Gestion des stocks de bonbons
+
+Aucun bonbon ne sera fourni avec la machine. Les utilisateurs devront s’approvisionner par leurs propres moyens, en respectant la catégorie de bonbons conseillée.
+
+Maintenance et SAV
+
+Disponibilité des pièces détachées en cas de panne.
+Un chat IA sera implémenté pour toute question vis-à-vis des produits vendus ou bien en cas de problème.
+Les clients pourront aussi communiquer avec Coco Bonbon en remplissant un formulaire de contact. La suite des échanges auront lieu par mail.
+
+
+Pilotage de Projet (Triangle QCD)
+
+
+Cette section permet de garantir la viabilité économique et temporelle du projet.
+
+Coût
+
+Salaires (13 personnes)
+Stagiaires
+0 €
+Impression 3D
+Filament + pertes + prototypes
+20 € - 50 €
+Usinage
+Planche de bois + consommables internes
+10 € - 30 €
+Visserie / assemblage
+Vis, inserts, colle, ressorts
+5 € - 15 €
+Réservoir
+Bocal plastique / acrylique
+5 € - 15 €
+
+
+
+Délai
+
+On distingue 16 tâches différentes. Le projet s’étale sur l’ensemble des séances de TP disponibles, soit un total de 15 heures.
+Afin d’assurer une bonne efficacité et une répartition claire des responsabilités, nous avons défini quatre équipes :
+Communication
+Modélisation
+Développement
+Conception
+
+Le diagramme de Gantt est disponible à l’adresse suivante :
+https://docs.google.com/spreadsheets/d/12_55N2gkbA0M5SzF3-uveafO_mvEcERi6xZ0XFTTWJ8/edit?usp=sharing
+
+Qualité
+
+La machine à bonbons doit être conçue de manière à être accessible au plus grand nombre d’utilisateurs, y compris les personnes en situation de handicap. Pour cela, elle doit proposer une interface simple et intuitive, avec des instructions claires et compréhensibles. Les éléments de commande et la zone de récupération des bonbons doivent être placés à une hauteur adaptée afin de rester accessibles aux personnes en fauteuil roulant. L’affichage doit être lisible, avec une taille de texte suffisante et un bon contraste, et peut être complété par des pictogrammes ou des indications visuelles facilitant la compréhension.
+
+Sur le plan des exigences fonctionnelles, la machine doit permettre la distribution des bonbons. Il s’agit ici d’une machine simple : pas de paiement, pas de sélection de bonbons, etc.
+
+D’un point de vue technique et de sécurité, la machine doit être fiable, robuste et capable de fonctionner en continu dans un environnement public. Elle doit respecter les normes électriques en vigueur et garantir la sécurité de l’utilisateur lors de son utilisation. Enfin, elle doit être conçue pour faciliter la maintenance et le réapprovisionnement, tout en limitant la consommation énergétique et en assurant une bonne résistance aux usages intensifs et aux éventuelles dégradations.
+
+
+
