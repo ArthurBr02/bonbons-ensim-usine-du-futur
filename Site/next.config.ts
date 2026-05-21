@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "raw.githubusercontent.com",
         pathname: "/ArthurBr02/bonbons-ensim-usine-du-futur/**",
       },
+      {
+        protocol: "https",
+        hostname: "github.com",
+        pathname: "/ArthurBr02/bonbons-ensim-usine-du-futur/**",
+      },
     ],
   },
 };

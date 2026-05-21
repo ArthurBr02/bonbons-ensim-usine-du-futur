@@ -10,6 +10,12 @@ export default function ChatDrawer() {
   const [input, setInput] = useState("");
   const bodyRef = useRef<HTMLDivElement>(null);
 
+  // Lock body scroll when open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
+
   // Auto-scroll to bottom
   useEffect(() => {
     if (bodyRef.current) {
