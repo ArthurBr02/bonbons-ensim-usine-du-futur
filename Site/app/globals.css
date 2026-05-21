@@ -764,6 +764,7 @@ footer .foot-mark {
 .drawer-body {
   flex: 1;
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -953,6 +954,13 @@ footer .foot-mark {
   border: .5px solid var(--hair-2);
   border-bottom-left-radius: 4px;
 }
+
+.chat-msg p:last-child { margin-bottom: 0; }
+.chat-msg p { margin: 0 0 8px 0; }
+.chat-msg ul, .chat-msg ol { padding-left: 20px; margin: 8px 0; }
+.chat-msg li { margin-bottom: 4px; }
+.chat-msg a { text-decoration: underline; color: inherit; }
+.chat-msg strong { font-weight: 700; }
 
 .chat-foot {
   padding: 16px;

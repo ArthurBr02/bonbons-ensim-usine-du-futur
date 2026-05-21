@@ -2,6 +2,8 @@
 
 import { useChatStore, Message } from "@/store/chat";
 import { useState, useRef, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function ChatDrawer() {
   const { isOpen, messages, isLoading, open, close, addMessage, setLoading } = useChatStore();
@@ -78,7 +80,9 @@ export default function ChatDrawer() {
           
           {messages.map((msg, i) => (
             <div key={i} className={`chat-msg ${msg.role === "user" ? "chat-msg-user" : "chat-msg-bot"}`}>
-              {msg.content}
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {msg.content}
+              </ReactMarkdown>
             </div>
           ))}
 

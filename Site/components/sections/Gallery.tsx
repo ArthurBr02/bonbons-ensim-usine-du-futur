@@ -6,7 +6,6 @@ import { useState } from "react";
 const BASE = "https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-du-futur/main/Rendus";
 
 const PALETTES = [
-  { key: "default", label: "Aluminium", color: "#d0cec6" },
   { key: "rose", label: "Rose", color: "#FD5F9F" },
   { key: "menthe", label: "Menthe", color: "#5dd6a8" },
   { key: "violet", label: "Violet", color: "#7c5cff" },
@@ -14,12 +13,12 @@ const PALETTES = [
 ];
 
 export default function Gallery() {
-  const [palette, setPalette] = useState("default");
+  const [palette, setPalette] = useState("rose");
   const [missingVariants, setMissingVariants] = useState<Set<string>>(new Set());
 
   const getImageUrl = (view: string, p: string) => {
     const variantKey = `${view}-${p}`;
-    if (p === "default" || missingVariants.has(variantKey)) {
+    if (missingVariants.has(variantKey)) {
       return `${BASE}/${view}.jpg`;
     }
     return `${BASE}/${view}-${p}.jpg`;

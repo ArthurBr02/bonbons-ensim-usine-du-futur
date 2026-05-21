@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 
-const SYSTEM_PROMPT = `
+const REMOTE_DOC_URL = "https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-du-futur/main/Communication/doc-chatbot.txt";
+
+const SYSTEM_PROMPT_BASE = `
 Tu es l'assistant de Coco Bonbons, le distributeur de bonbons MK1.
 Projet ENSIM "Usine du futur", fait en France par des étudiants.
-Prix : 149€ TTC. Paiement simulé (pas de vrai achat).
-Matériaux : aluminium brossé, dôme verre borosilicate, socle impression 3D.
-Capacité : 300g. Bonbons compatibles : petits ronds (M&Ms, Skittles, Maltesers).
+Bonbons compatibles : petits ronds (M&Ms, Skittles, Maltesers).
 Couleurs disponibles : Rose, Menthe, Violet, Orange (rendus à venir).
 Pour toute demande SAV ou réclamation, redirige vers le formulaire section #contact.
 Réponds en français, de façon concise et sympathique.
@@ -22,6 +22,19 @@ export async function POST(req: Request) {
       );
     }
 
+    // Fetch remote documentation
+    let remoteDoc = "";
+    try {
+      const docRes = await fetch(REMOTE_DOC_URL, { next: { revalidate: 3600 } }); // Cache for 1 hour
+      if (docRes.ok) {
+        remoteDoc = await docRes.text();
+      }
+    } catch (err) {
+      console.error("Failed to fetch remote doc:", err);
+    }
+
+    const fullSystemPrompt = `${SYSTEM_PROMPT_BASE}\n\nINFORMATIONS COMPLÉMENTAIRES :\n${remoteDoc}`;
+
     const response = await fetch("https://api.mistral.ai/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -31,7 +44,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         model: process.env.MISTRAL_MODEL || "open-mistral-nemo",
         messages: [
-          { role: "system", content: SYSTEM_PROMPT },
+          { role: "system", content: fullSystemPrompt },
           ...messages,
         ],
       }),
