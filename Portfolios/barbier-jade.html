@@ -1,188 +1,197 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-direction="atelier">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Équipe | Coco Bonbons</title>
+    <title>Portfolio - Fast Test</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --bg: #f4f3ee;
+            --paper: #faf9f5;
+            --ink: #15140f;
+            --ink-2: #46443c;
+            --ink-3: #84807a;
+            --hair: rgba(20, 19, 14, 0.10);
+            --accent: #FD5F9F;
+            --font-display: 'Instrument Serif', serif;
+            --font-body: 'Manrope', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            --glass-bg: rgba(250, 249, 245, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 30px 80px rgba(30, 28, 20, 0.08), 0 2px 6px rgba(30, 28, 20, 0.05);
+        }
+
+        * { box-sizing: border-box; }
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
+
+        body::before {
+            content: "";
+            position: fixed; inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(800px 600px at 80% -10%, rgba(253, 95, 159, 0.08), transparent 60%),
+                radial-gradient(600px 500px at -10% 110%, rgba(124, 92, 255, 0.06), transparent 60%);
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            position: relative;
+            z-index: 1;
+        }
+
         header {
-            background-color: #ff6b6b;
-            color: white;
-            padding: 1rem;
-            text-align: center;
+            margin-bottom: 64px;
         }
-        nav {
-            background-color: #4ecdc4;
-            padding: 0.5rem;
-            text-align: center;
+
+        .h-display {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 400;
+            line-height: 0.9;
+            margin: 0 0 16px 0;
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
+
+        .h-display em {
+            font-style: italic;
+            color: var(--accent);
         }
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+
+        .h-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
         }
-        h1, h2 {
-            color: #ff6b6b;
+
+        .h-eyebrow::before {
+            content: "";
+            width: 24px; height: 1px;
+            background: currentColor;
+            opacity: 0.5;
         }
-        .team-grid {
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 32px;
+        }
+
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
         }
-        .team-member {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
+
+        .mono {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-2);
         }
-        .team-member img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--hair);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            margin-right: 6px;
+            margin-bottom: 6px;
         }
-        .project-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0 0 24px 0;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 24px;
+            color: var(--ink-2);
         }
-        a {
-            color: #ff6b6b;
+
+        .contact-link {
+            color: var(--accent);
             text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .contact-link:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Coco Bonbons</h1>
-        <p>L'usine du futur à portée de main !</p>
-    </header>
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/produit">Notre Machine</a>
-        <a href="/equipe">Équipe</a>
-        <a href="/contact">Contact</a>
-    </nav>
-    <div class="container">
-        <h1>Portfolio - Équipe</h1>
-        <p>Découvrez les réalisations des équipes qui ont conçu <b>Coco Bonbons</b> ! Chaque membre a apporté son expertise pour créer une machine innovante, ergonomique et personnalisable.</p>
+    <div class="wrap">
+        <header>
+            <div class="h-eyebrow">Portfolio Étudiant</div>
+            <h1 class="h-display">Test <em>User</em></h1>
+            <p class="mono">Ingénierie de l'Usine du Futur — ENSIM 2026</p>
+        </header>
 
-        <h2>Nos Équipes</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <h3>🔧 Équipe Conception</h3>
-                <p><strong>Rôle :</strong> Modélisation 3D, prototypage et optimisation mécanique.</p>
-                <p><strong>Réalisations :</strong></p>
-                <ul>
-                    <li>Modélisation du mécanisme de distribution.</li>
-                    <li>Création des fichiers pour impression 3D.</li>
-                    <li>Optimisation des tolérances pour un assemblage parfait.</li>
-                </ul>
-                <a href="#conception">Voir les projets →</a>
+        <main>
+            <div class="glass-card">
+                <h2>À propos</h2>
+                <p>
+                    Bienvenue sur ce portfolio de test. Ce fichier HTML est conçu pour valider le système d'intégration 
+                    des portfolios d'équipe dans le projet <strong>Coco Bonbons</strong>. 
+                </p>
+                <p>
+                    Passionné par l'automatisation et le design industriel, j'explore les nouvelles frontières 
+                    de la production connectée et de l'expérience utilisateur physique.
+                </p>
+                <div class="tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Usine 4.0</span>
+                </div>
             </div>
 
-            <div class="team-member">
-                <h3>💻 Équipe Développement</h3>
-                <p><strong>Rôle :</strong> Développement du site web et des fonctionnalités interactives.</p>
-                <p><strong>Réalisations :</strong></p>
-                <ul>
-                    <li>Site web responsive avec personnalisation en ligne.</li>
-                    <li>Intégration du formulaire de contact et SAV.</li>
-                    <li>Optimisation pour mobile et accessibilité.</li>
-                </ul>
-                <a href="#developpement">Voir les projets →</a>
+            <div class="grid">
+                <div class="glass-card">
+                    <h2>Projet MK1</h2>
+                    <p>Développement de l'interface de commande et du système de distribution automatisé.</p>
+                    <a href="#" class="contact-link mono">Voir le projet →</a>
+                </div>
+                <div class="glass-card">
+                    <h2>Recherche</h2>
+                    <p>Étude sur la durabilité des matériaux en impression 3D pour le dôme borosilicate.</p>
+                    <a href="#" class="contact-link mono">Lire l'étude →</a>
+                </div>
             </div>
-
-            <div class="team-member">
-                <h3>🎨 Équipe Communication</h3>
-                <p><strong>Rôle :</strong> Charte graphique, identité visuelle et documentation.</p>
-                <p><strong>Réalisations :</strong></p>
-                <ul>
-                    <li>Charte graphique de la machine et du site.</li>
-                    <li>Création des visuels 3D et des maquettes.</li>
-                    <li>Rédaction des notices techniques.</li>
-                </ul>
-                <a href="#communication">Voir les projets →</a>
-            </div>
-
-            <div class="team-member">
-                <h3>⚙️ Équipe Modélisation</h3>
-                <p><strong>Rôle :</strong> Fabrication numérique et usinage.</p>
-                <p><strong>Réalisations :</strong></p>
-                <ul>
-                    <li>Usinage des pièces en bois (support, coupelle).</li>
-                    <li>Impression 3D des composants (corps, levier).</li>
-                    <li>Assemblage et tests de robustesse.</li>
-                </ul>
-                <a href="#modelisation">Voir les projets →</a>
-            </div>
-        </div>
-
-        <h2>Projets Clés</h2>
-
-        <div class="project-card" id="conception">
-            <h3>🔧 Mécanisme de Distribution</h3>
-            <p><strong>Équipe :</strong> Conception</p>
-            <p>Modélisation d'un système de roue compartimentée pour une distribution fluide et sans blocage. Le mécanisme permet de libérer 1 à 3 bonbons par rotation du levier, avec une résistance maîtrisée.</p>
-            <img src="https://via.placeholder.com/600x300?text=Mécanisme+de+Distribution" alt="Mécanisme de distribution">
-            <p><strong>Compétences mises en œuvre :</strong> CAO (SolidWorks), prototypage rapide, analyse des contraintes mécaniques.</p>
-        </div>
-
-        <div class="project-card" id="developpement">
-            <h3>💻 Site Web & Personnalisation</h3>
-            <p><strong>Équipe :</strong> Développement</p>
-            <p>Création d'un site web permettant de personnaliser les couleurs de la machine et de simuler un achat. Le site est responsive et intègre un formulaire de contact pour le SAV.</p>
-            <img src="https://via.placeholder.com/600x300?text=Site+Web+Coco+Bonbons" alt="Site web Coco Bonbons">
-            <p><strong>Compétences mises en œuvre :</strong> HTML/CSS, JavaScript, design UX/UI.</p>
-        </div>
-
-        <div class="project-card" id="communication">
-            <h3>🎨 Identité Visuelle</h3>
-            <p><strong>Équipe :</strong> Communication</p>
-            <p>Définition de la charte graphique : couleurs (rose, menthe, violet, orange), typographie et logo. Création des visuels 3D pour le site et les supports marketing.</p>
-            <img src="https://via.placeholder.com/600x300?text=Charte+Graphique" alt="Charte graphique">
-            <p><strong>Compétences mises en œuvre :</strong> Photoshop, Illustrator, branding.</p>
-        </div>
-
-        <div class="project-card" id="modelisation">
-            <h3>⚙️ Pièces Usinées & Imprimées</h3>
-            <p><strong>Équipe :</strong> Modélisation</p>
-            <p>Fabrication des pièces en bois (support de la coupelle) et en impression 3D (corps, levier). Tests de résistance et assemblage final.</p>
-            <img src="https://via.placeholder.com/600x300?text=Pièces+Usinées" alt="Pièces usinées et imprimées">
-            <p><strong>Compétences mises en œuvre :</strong> Fraisage CNC, impression 3D (PLA alimentaire), contrôle qualité.</p>
-        </div>
+        </main>
     </div>
-
-    <footer>
-        <p>© 2026 Coco Bonbons - Projet "Usine du Futur" | <a href="#contact">Contactez-nous</a></p>
-    </footer>
 </body>
 </html>
