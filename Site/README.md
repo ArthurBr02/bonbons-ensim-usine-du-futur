@@ -57,10 +57,6 @@ Copier `.env.local.example` en `.env.local` et renseigner :
 - **Next.js 16** (App Router, TypeScript)
 - **Mistral AI** (`open-mistral-nemo`) — assistant conversationnel
 - **Tailwind CSS v4** — design system via CSS vars dans `globals.css`
-- **Prisma 7 + SQLite** — client adaptatif `@prisma/adapter-better-sqlite3`
-- **Zustand 5** — état panier, chat et UI
-- **Lenis + GSAP** — smooth scroll et animations au scroll
-- **React Three Fiber** — scaffold 3D (activer avec `NEXT_PUBLIC_USE_3D=true`)
 - **Resend + React Email** — emails de confirmation et SAV
 
 ## Activer le modèle 3D (GLB SolidWorks)
@@ -81,8 +77,7 @@ components/distributor/ DistributorCSS (actif) + Distributor3D (scaffold)
 design/                 Prototype HTML/CSS original (référence design)
 docs/                   Spécifications du projet
 emails/                 Templates React Email (Order & Contact)
-lib/                    Prisma, Resend, generateOrderId
-prisma/                 Schema, migrations, dev.db
+lib/                    Resend, generateOrderId
 public/models/          Emplacement du GLB (à venir)
 store/                  Zustand stores (cart, chat)
 ```
