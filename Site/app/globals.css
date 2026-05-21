@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-display: var(--font-instrument-serif), "Newsreader", Georgia, serif;
+  --font-display: var(--font-fraunces), serif;
   --font-body: var(--font-manrope), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -221,7 +221,7 @@ section {
   align-items: center;
 }
 .hero h1 {
-  font-size: clamp(54px, 8.5vw, 132px);
+  font-size: clamp(42px, 6vw, 92px);
 }
 .hero h1 .tag {
   display: inline-block;
@@ -230,7 +230,14 @@ section {
   margin-left: -.2em;
   color: var(--ink-3);
   font-family: var(--font-mono);
-  letter-spacing: 0.05em;
+}
+.hero-visual {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hero-sub {
   margin-top: 28px;

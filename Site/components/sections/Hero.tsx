@@ -1,5 +1,5 @@
 "use client";
-import DistributorCSS from "@/components/distributor/DistributorCSS";
+import Distributor from "@/components/distributor";
 import { useCart } from "@/store/cart";
 
 export default function Hero() {
@@ -38,8 +38,8 @@ export default function Hero() {
             <div><span>4&nbsp;ans</span>Garantie atelier</div>
           </div>
         </div>
-        <div>
-          <DistributorCSS height={620} />
+        <div className="hero-visual">
+          <Distributor height={620} />
         </div>
       </div>
     </section>

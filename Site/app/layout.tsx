@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "700"],
   style: ["normal", "italic"],
 });
 
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   title: "Coco Bonbons — Distributeur de bonbons artisanal",
   description: "Coco Bonbons MK1 — Un distributeur de bonbons en aluminium brossé et verre borosilicate, fabriqué à la main en France.",
   icons: {
-    icon: "https://github.com/ArthurBr02/bonbons-ensim-usine-du-futur/blob/main/Communication/camionette_2.png?raw=true",
-    apple: "https://github.com/ArthurBr02/bonbons-ensim-usine-du-futur/blob/main/Communication/camionette_2.png?raw=true",
+    icon: "https://github.com/ArthurBr02/bonbons-ensim-usine-du-futur/blob/main/Communication/camionette_2.jpeg?raw=true",
+    apple: "https://github.com/ArthurBr02/bonbons-ensim-usine-du-futur/blob/main/Communication/camionette_2.jpeg?raw=true",
   },
 };
 
@@ -40,7 +40,7 @@ export default function RootLayout({
     <html
       lang="fr"
       data-direction="atelier"
-      className={`${instrumentSerif.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
+      className={`${fraunces.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
     >
       <body>
         <LenisProvider>
