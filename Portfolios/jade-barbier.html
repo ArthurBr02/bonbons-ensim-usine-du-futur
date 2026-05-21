@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr" data-direction="atelier">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Fast Test</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #f4f3ee;
+            --paper: #faf9f5;
+            --ink: #15140f;
+            --ink-2: #46443c;
+            --ink-3: #84807a;
+            --hair: rgba(20, 19, 14, 0.10);
+            --accent: #FD5F9F;
+            --font-display: 'Instrument Serif', serif;
+            --font-body: 'Manrope', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            --glass-bg: rgba(250, 249, 245, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 30px 80px rgba(30, 28, 20, 0.08), 0 2px 6px rgba(30, 28, 20, 0.05);
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed; inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(800px 600px at 80% -10%, rgba(253, 95, 159, 0.08), transparent 60%),
+                radial-gradient(600px 500px at -10% 110%, rgba(124, 92, 255, 0.06), transparent 60%);
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            margin-bottom: 64px;
+        }
+
+        .h-display {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 400;
+            line-height: 0.9;
+            margin: 0 0 16px 0;
+        }
+
+        .h-display em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .h-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .h-eyebrow::before {
+            content: "";
+            width: 24px; height: 1px;
+            background: currentColor;
+            opacity: 0.5;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 32px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .mono {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-2);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--hair);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0 0 24px 0;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 24px;
+            color: var(--ink-2);
+        }
+
+        .contact-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="h-eyebrow">Portfolio Étudiant</div>
+            <h1 class="h-display">Test <em>User</em></h1>
+            <p class="mono">Ingénierie de l'Usine du Futur — ENSIM 2026</p>
+        </header>
+
+        <main>
+            <div class="glass-card">
+                <h2>À propos</h2>
+                <p>
+                    Bienvenue sur ce portfolio de test. Ce fichier HTML est conçu pour valider le système d'intégration 
+                    des portfolios d'équipe dans le projet <strong>Coco Bonbons</strong>. 
+                </p>
+                <p>
+                    Passionné par l'automatisation et le design industriel, j'explore les nouvelles frontières 
+                    de la production connectée et de l'expérience utilisateur physique.
+                </p>
+                <div class="tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Usine 4.0</span>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="glass-card">
+                    <h2>Projet MK1</h2>
+                    <p>Développement de l'interface de commande et du système de distribution automatisé.</p>
+                    <a href="#" class="contact-link mono">Voir le projet →</a>
+                </div>
+                <div class="glass-card">
+                    <h2>Recherche</h2>
+                    <p>Étude sur la durabilité des matériaux en impression 3D pour le dôme borosilicate.</p>
+                    <a href="#" class="contact-link mono">Lire l'étude →</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
