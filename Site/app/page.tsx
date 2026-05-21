@@ -7,8 +7,10 @@ import Gallery from "@/components/sections/Gallery";
 import About from "@/components/sections/About";
 import Order from "@/components/sections/Order";
 import Faq from "@/components/sections/Faq";
+import Sav from "@/components/sections/Sav";
 import Footer from "@/components/sections/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
+import ChatDrawer from "@/components/chat/ChatDrawer";
 
 export default function Home() {
   return (
@@ -25,9 +27,11 @@ export default function Home() {
         <About />
         <Order />
         <Faq />
+        <Sav />
       </main>
       <Footer />
       <CartDrawer />
+      <ChatDrawer />
     </>
   );
 }
