@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Coco Bonbons — Distributeur de bonbons artisanal",
-  description: "Coco Bonbons MK1 — Un distributeur de bonbons en aluminium brossé et verre borosilicate, fabriqué à la main en France.",
+  description: "Coco Bonbons MK1 — Un distributeur de bonbons en plastique délicieux et verre alimentaire, fabriqué à la main en France.",
   icons: {
     icon: "https://github.com/ArthurBr02/bonbons-ensim-usine-du-futur/blob/main/Communication/camionette_2.jpeg?raw=true",
     apple: "https://github.com/ArthurBr02/bonbons-ensim-usine-du-futur/blob/main/Communication/camionette_2.jpeg?raw=true",

@@ -1,6 +1,6 @@
 # Coco Bonbons
 
-Site vitrine e-commerce one-page pour le **Coco Bonbons MK1** — distributeur de bonbons en aluminium brossé et verre borosilicate.  
+Site vitrine e-commerce one-page pour le **Coco Bonbons MK1** — distributeur de bonbons en aluminium brossé et verre alimentaire.  
 Projet pédagogique du cours **Usine du futur** à l'ENSIM.
 
 ## Démarrage rapide

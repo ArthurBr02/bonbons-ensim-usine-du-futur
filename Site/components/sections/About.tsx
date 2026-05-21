@@ -17,8 +17,8 @@ export default function About() {
           <div className="about-tags">
             <span>CAO Solidworks</span>
             <span>Usinage CN</span>
-            <span>Verre borosilicate</span>
-            <span>Anodisation</span>
+            <span>Verre Bonne maman</span>
+            <span>Impression 3D</span>
             <span>Made in Loire-Atlantique</span>
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function About() {
             Aussi sérieux<br />qu&apos;un <em>bonbon</em><br />peut l&apos;être.
           </h2>
           <p style={{ color: "var(--ink-2)", marginTop: 22, maxWidth: "38ch" }}>
-            On a passé plus d&apos;heures à modéliser un cap en aluminium qu&apos;à
+            On a passé plus d&apos;heures à modéliser un truc en plastique qu&apos;à
             choisir les bonbons. C&apos;est probablement un défaut. C&apos;est sûrement
             ce qui rend la pièce belle.
           </p>

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { useCart } from "@/store/cart";
 
 const UNIT_PRICE = 149;
@@ -91,7 +92,15 @@ export default function CartDrawer() {
                 </div>
               ) : (
                 <div className="line-item">
-                  <div className="li-thumb" />
+                  <div className="li-thumb">
+                    <Image
+                      src="https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-du-futur/main/Rendus/front.jpg"
+                      alt="Coco Bonbons MK1"
+                      fill
+                      style={{ objectFit: "cover", zIndex: 1 }}
+                      sizes="92px"
+                    />
+                  </div>
                   <div>
                     <div className="li-name">Coco Bonbons MK1</div>
                     <div className="li-sku">CB-MK1-001 · Aluminium brossé</div>

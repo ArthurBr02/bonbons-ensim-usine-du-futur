@@ -1,6 +1,6 @@
 const SPECS = [
-  { name: "Matériau corps", sub: "Aluminium 6061 anodisé, finition brossée mate.", val: "Alu 6061" },
-  { name: "Dôme", sub: "Verre borosilicate soufflé, traitement anti-rayure.", val: "Borosilicate 3mm" },
+  { name: "Matériau corps", sub: "Plastique délicieux.", val: "Plastique délicieux" },
+  { name: "Dôme", sub: "Verre Bonne maman soufflé, traitement anti-rayure.", val: "Verre alimentaire" },
   { name: "Capacité", sub: "Environ 300 g de bonbons standards, calibre 12–18 mm.", val: "~300 g" },
   { name: "Mécanisme", sub: "Roue de dosage usinée, libération par rotation manuelle.", val: "Manuel · 1 tour" },
   { name: "Dimensions", sub: "Hauteur totale, dôme inclus, sur socle pédestal.", val: "38 × 18 × 18 cm" },
@@ -18,7 +18,7 @@ export default function Specs() {
           <p>
             Chaque distributeur est usiné à la commande. La pièce vit sur une étagère,
             un bureau, un comptoir d&apos;accueil. Pas de plastique, pas de led inutile —
-            juste du métal, du verre, et du bonbon.
+            juste du plastique, du verre, et du bonbon.
           </p>
         </div>
         <div className="specs-grid" style={{ gridTemplateColumns: "1fr", maxWidth: 920 }}>
