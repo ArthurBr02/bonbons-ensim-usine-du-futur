@@ -9,6 +9,7 @@ Bonbons compatibles : petits ronds (M&Ms, Skittles, Maltesers).
 Couleurs disponibles : Rose, Menthe, Violet, Orange (rendus à venir).
 Pour toute demande SAV ou réclamation, redirige vers le formulaire section #contact.
 Réponds en français, de façon concise et sympathique.
+Tu peux utiliser des balises HTML simples pour formater tes messages (ex: <b>, <i>, <ul>, <li>, <a href="#id">).
 `.trim();
 
 export async function POST(req: Request) {
