@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Équipe | Coco Bonbons</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #4ecdc4;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h1, h2 {
+            color: #ff6b6b;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .team-member {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .team-member img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Coco Bonbons</h1>
+        <p>L'usine du futur à portée de main !</p>
+    </header>
+    <nav>
+        <a href="/">Accueil</a>
+        <a href="/produit">Notre Machine</a>
+        <a href="/equipe">Équipe</a>
+        <a href="/contact">Contact</a>
+    </nav>
+    <div class="container">
+        <h1>Portfolio - Équipe</h1>
+        <p>Découvrez les réalisations des équipes qui ont conçu <b>Coco Bonbons</b> ! Chaque membre a apporté son expertise pour créer une machine innovante, ergonomique et personnalisable.</p>
+
+        <h2>Nos Équipes</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>🔧 Équipe Conception</h3>
+                <p><strong>Rôle :</strong> Modélisation 3D, prototypage et optimisation mécanique.</p>
+                <p><strong>Réalisations :</strong></p>
+                <ul>
+                    <li>Modélisation du mécanisme de distribution.</li>
+                    <li>Création des fichiers pour impression 3D.</li>
+                    <li>Optimisation des tolérances pour un assemblage parfait.</li>
+                </ul>
+                <a href="#conception">Voir les projets →</a>
+            </div>
+
+            <div class="team-member">
+                <h3>💻 Équipe Développement</h3>
+                <p><strong>Rôle :</strong> Développement du site web et des fonctionnalités interactives.</p>
+                <p><strong>Réalisations :</strong></p>
+                <ul>
+                    <li>Site web responsive avec personnalisation en ligne.</li>
+                    <li>Intégration du formulaire de contact et SAV.</li>
+                    <li>Optimisation pour mobile et accessibilité.</li>
+                </ul>
+                <a href="#developpement">Voir les projets →</a>
+            </div>
+
+            <div class="team-member">
+                <h3>🎨 Équipe Communication</h3>
+                <p><strong>Rôle :</strong> Charte graphique, identité visuelle et documentation.</p>
+                <p><strong>Réalisations :</strong></p>
+                <ul>
+                    <li>Charte graphique de la machine et du site.</li>
+                    <li>Création des visuels 3D et des maquettes.</li>
+                    <li>Rédaction des notices techniques.</li>
+                </ul>
+                <a href="#communication">Voir les projets →</a>
+            </div>
+
+            <div class="team-member">
+                <h3>⚙️ Équipe Modélisation</h3>
+                <p><strong>Rôle :</strong> Fabrication numérique et usinage.</p>
+                <p><strong>Réalisations :</strong></p>
+                <ul>
+                    <li>Usinage des pièces en bois (support, coupelle).</li>
+                    <li>Impression 3D des composants (corps, levier).</li>
+                    <li>Assemblage et tests de robustesse.</li>
+                </ul>
+                <a href="#modelisation">Voir les projets →</a>
+            </div>
+        </div>
+
+        <h2>Projets Clés</h2>
+
+        <div class="project-card" id="conception">
+            <h3>🔧 Mécanisme de Distribution</h3>
+            <p><strong>Équipe :</strong> Conception</p>
+            <p>Modélisation d'un système de roue compartimentée pour une distribution fluide et sans blocage. Le mécanisme permet de libérer 1 à 3 bonbons par rotation du levier, avec une résistance maîtrisée.</p>
+            <img src="https://via.placeholder.com/600x300?text=Mécanisme+de+Distribution" alt="Mécanisme de distribution">
+            <p><strong>Compétences mises en œuvre :</strong> CAO (SolidWorks), prototypage rapide, analyse des contraintes mécaniques.</p>
+        </div>
+
+        <div class="project-card" id="developpement">
+            <h3>💻 Site Web & Personnalisation</h3>
+            <p><strong>Équipe :</strong> Développement</p>
+            <p>Création d'un site web permettant de personnaliser les couleurs de la machine et de simuler un achat. Le site est responsive et intègre un formulaire de contact pour le SAV.</p>
+            <img src="https://via.placeholder.com/600x300?text=Site+Web+Coco+Bonbons" alt="Site web Coco Bonbons">
+            <p><strong>Compétences mises en œuvre :</strong> HTML/CSS, JavaScript, design UX/UI.</p>
+        </div>
+
+        <div class="project-card" id="communication">
+            <h3>🎨 Identité Visuelle</h3>
+            <p><strong>Équipe :</strong> Communication</p>
+            <p>Définition de la charte graphique : couleurs (rose, menthe, violet, orange), typographie et logo. Création des visuels 3D pour le site et les supports marketing.</p>
+            <img src="https://via.placeholder.com/600x300?text=Charte+Graphique" alt="Charte graphique">
+            <p><strong>Compétences mises en œuvre :</strong> Photoshop, Illustrator, branding.</p>
+        </div>
+
+        <div class="project-card" id="modelisation">
+            <h3>⚙️ Pièces Usinées & Imprimées</h3>
+            <p><strong>Équipe :</strong> Modélisation</p>
+            <p>Fabrication des pièces en bois (support de la coupelle) et en impression 3D (corps, levier). Tests de résistance et assemblage final.</p>
+            <img src="https://via.placeholder.com/600x300?text=Pièces+Usinées" alt="Pièces usinées et imprimées">
+            <p><strong>Compétences mises en œuvre :</strong> Fraisage CNC, impression 3D (PLA alimentaire), contrôle qualité.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Coco Bonbons - Projet "Usine du Futur" | <a href="#contact">Contactez-nous</a></p>
+    </footer>
+</body>
+</html>
