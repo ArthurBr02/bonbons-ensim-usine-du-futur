@@ -7,7 +7,13 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <a href="#" className="nav-brand">
-        <span className="dot" />
+        <img 
+          src="https://github.com/ArthurBr02/bonbons-ensim-usine-du-futur/blob/main/Communication/LOGO_LITE.png?raw=true" 
+          alt="Coco Bonbons Logo" 
+          width={24} 
+          height={24}
+          style={{ objectFit: 'contain' }}
+        />
         Coco Bonbons
       </a>
       <div className="nav-links">

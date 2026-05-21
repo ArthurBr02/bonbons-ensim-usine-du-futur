@@ -169,11 +169,6 @@ section {
   padding-right: 8px;
   border-right: .5px solid var(--hair-2);
 }
-.nav-brand .dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff 0 20%, var(--accent) 25% 100%);
-  box-shadow: 0 0 0 1px rgba(0,0,0,.05);
-}
 .nav-links { display: flex; gap: 4px; }
 .nav-links a {
   padding: 7px 12px;

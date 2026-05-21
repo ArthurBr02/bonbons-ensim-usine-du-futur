@@ -21,9 +21,21 @@ export default function OrderEmail({ orderId, name, quantity, total }: OrderEmai
         <Container style={{ maxWidth: 560, margin: "0 auto", background: "#faf9f5", borderRadius: 14, overflow: "hidden" }}>
           {/* Header */}
           <Section style={{ background: "#15140f", padding: "28px 40px" }}>
-            <Heading style={{ color: "#faf9f5", margin: 0, fontSize: 28, fontWeight: 400, letterSpacing: "-0.02em" }}>
-              Coco Bonbons.
-            </Heading>
+            <Row align="left">
+              <Column width="40">
+                <img 
+                  src="https://github.com/ArthurBr02/bonbons-ensim-usine-du-futur/blob/main/Communication/LOGO_LITE.png?raw=true" 
+                  alt="Logo" 
+                  width="32" 
+                  height="32" 
+                />
+              </Column>
+              <Column style={{ paddingLeft: 12 }}>
+                <Heading style={{ color: "#faf9f5", margin: 0, fontSize: 28, fontWeight: 400, letterSpacing: "-0.02em" }}>
+                  Coco Bonbons.
+                </Heading>
+              </Column>
+            </Row>
           </Section>
 
           {/* Body */}

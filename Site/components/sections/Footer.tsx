@@ -4,10 +4,19 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot-top">
           <div>
-            <div className="foot-mark">
-              Coco Bonbons<em style={{ color: "var(--accent)" }}>.</em>
+            <div className="foot-mark" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <img 
+                src="https://github.com/ArthurBr02/bonbons-ensim-usine-du-futur/blob/main/Communication/LOGO_LITE.png?raw=true" 
+                alt="Coco Bonbons Logo" 
+                width={32} 
+                height={32}
+                style={{ objectFit: 'contain' }}
+              />
+              <span>
+                Coco Bonbons<em style={{ color: "var(--accent)" }}>.</em>
+              </span>
             </div>
-            <div style={{ color: "rgba(255,255,255,.6)", fontSize: 13, maxWidth: "36ch" }}>
+            <div style={{ color: "rgba(255,255,255,.6)", fontSize: 13, maxWidth: "36ch", marginTop: '12px' }}>
               Distributeur de bonbons usiné en France.
               Projet pédagogique du cours Usine du futur.
             </div>
