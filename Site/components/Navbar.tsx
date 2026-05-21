@@ -20,6 +20,7 @@ export default function Navbar() {
         <a href="/#specs">Atelier</a>
         <a href="/#demo">Mécanique</a>
         <a href="/#order">Commander</a>
+        <a href="/equipe">Équipe</a>
         <a href="/#contact">Contact</a>
       </div>
       <button className="cart-btn" onClick={open} aria-label="Ouvrir le panier">

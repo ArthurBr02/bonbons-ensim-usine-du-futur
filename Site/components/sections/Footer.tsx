@@ -36,8 +36,8 @@ export default function Footer() {
             <h4>Atelier</h4>
             <ul>
               <li><a href="#about">Le projet</a></li>
+              <li><Link href="/equipe">L&apos;Équipe</Link></li>
               <li><a href="#faq">FAQ</a></li>
-              <li><a href="#">Newsletter</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
