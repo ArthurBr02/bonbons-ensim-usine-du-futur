@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr" data-direction="atelier">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Adrien DEROYE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f4f3ee;
+            --paper: #faf9f5;
+            --ink: #15140f;
+            --ink-2: #46443c;
+            --ink-3: #84807a;
+            --hair: rgba(20, 19, 14, 0.10);
+            --accent: #FD5F9F;
+            --accent-2: #7C5CFF;
+            --font-display: 'Instrument Serif', serif;
+            --font-body: 'Manrope', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --glass-bg: rgba(250, 249, 245, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 30px 80px rgba(30, 28, 20, 0.08), 0 2px 6px rgba(30, 28, 20, 0.05);
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; padding: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 0;
+            background:
+                radial-gradient(800px 600px at 80% -10%, rgba(124, 92, 255, 0.08), transparent 60%),
+                radial-gradient(600px 500px at -10% 110%, rgba(253, 95, 159, 0.06), transparent 60%);
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            position: relative; z-index: 1;
+        }
+
+        header { margin-bottom: 72px; }
+
+        .h-display {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 400;
+            line-height: 0.9;
+            margin: 0 0 16px 0;
+        }
+        .h-display em { font-style: italic; color: var(--accent-2); }
+
+        .h-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .h-eyebrow::before {
+            content: "";
+            width: 24px; height: 1px;
+            background: currentColor; opacity: 0.5;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 32px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        .grid .glass-card { margin-bottom: 0; }
+
+        .mono {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-2);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--hair);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            color: var(--ink-2);
+        }
+        .tag.accent { background: rgba(253, 95, 159, 0.12); color: var(--accent); }
+        .tag.purple { background: rgba(124, 92, 255, 0.10); color: var(--accent-2); }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0 0 20px 0;
+        }
+        h3 {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin: 0 0 16px 0;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: var(--ink-2);
+            font-size: 15px;
+        }
+        p:last-child { margin-bottom: 0; }
+
+        .contact-link {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        .contact-link:hover { opacity: 0.8; }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-label::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--hair);
+        }
+
+        .contribution-row {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--hair);
+        }
+        .contribution-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .contrib-num {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--accent-2);
+            min-width: 28px;
+            padding-top: 2px;
+        }
+
+        .contrib-body { flex: 1; }
+        .contrib-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+        .contrib-desc {
+            font-size: 13px;
+            color: var(--ink-3);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .sf-block {
+            border-left: 2px solid var(--accent-2);
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+        .sf-block:last-child { margin-bottom: 0; }
+
+        .sf-title {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-2);
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+
+        .sf-item {
+            font-size: 13px;
+            color: var(--ink-2);
+            line-height: 1.6;
+            padding: 5px 0;
+            display: flex;
+            gap: 10px;
+        }
+        .sf-item::before {
+            content: "—";
+            color: var(--ink-3);
+            flex-shrink: 0;
+        }
+
+        /* Gallery */
+        .render-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .render-gallery img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+        }
+
+        .render-gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(30, 28, 20, 0.14);
+        }
+
+        .render-gallery img.wide {
+            grid-column: span 2;
+            aspect-ratio: 16 / 9;
+        }
+
+        .color-swatches {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .swatch {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--ink-3);
+        }
+
+        .swatch-dot {
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            border: 1px solid var(--hair);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 48px 16px; }
+            .glass-card { padding: 28px 24px; }
+            .grid { grid-template-columns: 1fr; }
+            .render-gallery { grid-template-columns: repeat(2, 1fr); }
+            .render-gallery img.wide { grid-column: span 2; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+        <header>
+            <div class="h-eyebrow">Portfolio Étudiant · Coco Bonbons</div>
+            <h1 class="h-display">Adrien <em>DEROYE</em></h1>
+            <p class="mono">Apprenti Ingénieur Génie Mécanique — 4A GM Alt · ENSIM 2026</p>
+        </header>
+
+        <main>
+
+            <!-- À propos -->
+            <div class="glass-card">
+                <h2>À propos</h2>
+                <p class="mono" style="color: var(--accent-2); margin-bottom: 20px; font-size: 12px; letter-spacing: 0.08em;">Modélisation 3D & Rendus visuels</p>
+                <p>
+                    Étudiant en 4e année en apprentissage ingénieur génie mécanique à l'ENSIM (promotion 2026),
+                    je contribue au projet <strong>Coco Bonbons</strong> en prenant en charge la modélisation 3D
+                    des pièces mécaniques sous <strong>SolidWorks</strong> ainsi que la production des rendus
+                    visuels du distributeur.
+                </p>
+                <p>
+                    Mon travail principal a porté sur la conception de l'<strong>axe rotatif</strong> —
+                    la pièce centrale du mécanisme de distribution de bonbons — en garantissant
+                    les tolérances d'assemblage et la compatibilité avec les autres pièces du projet.
+                    J'ai également réalisé l'ensemble des rendus 3D qui illustrent le produit final
+                    dans ses différentes déclinaisons de couleur.
+                </p>
+                <div class="tags" style="margin-top: 20px;">
+                    <span class="tag purple">SolidWorks</span>
+                    <span class="tag purple">Modélisation 3D</span>
+                    <span class="tag purple">Rendu photoréaliste</span>
+                    <span class="tag accent">Axe rotatif</span>
+                    <span class="tag accent">Mécanisme de distribution</span>
+                    <span class="tag">4A GM Alt</span>
+                    <span class="tag">ENSIM 2026</span>
+                </div>
+            </div>
+
+            <!-- Contributions -->
+            <div class="section-label">Contributions au projet</div>
+
+            <div class="glass-card">
+                <h2>Mes rôles sur Coco Bonbons</h2>
+                <div class="contribution-row">
+                    <span class="contrib-num">01</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Modélisation de l'axe rotatif</div>
+                        <p class="contrib-desc">Conception sous SolidWorks de l'axe rotatif, pièce maîtresse du mécanisme de distribution. Définition des cotes, jeux fonctionnels et tolérances d'assemblage avec les pièces adjacentes.</p>
+                    </div>
+                </div>
+                <div class="contribution-row">
+                    <span class="contrib-num">02</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Mise en plan & documentation technique</div>
+                        <p class="contrib-desc">Génération des mises en plan SolidWorks avec cotations fonctionnelles pour la fabrication et la validation des pièces en impression 3D FDM.</p>
+                    </div>
+                </div>
+                <div class="contribution-row">
+                    <span class="contrib-num">03</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Rendus photoréalistes du distributeur</div>
+                        <p class="contrib-desc">Production de l'ensemble des visuels 3D du distributeur Coco Bonbons MK1 — vues de face, dôme, base et bonbons — déclinés dans les quatre coloris du produit (rose, menthe, orange, violet).</p>
+                    </div>
+                </div>
+                <div class="contribution-row">
+                    <span class="contrib-num">04</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Export GLB pour visualisation web</div>
+                        <p class="contrib-desc">Préparation et export du modèle assemblé au format GLB pour l'intégration dans la section 3D du site web via React Three Fiber.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galerie des rendus -->
+            <div class="section-label">Rendus 3D — Coco Bonbons MK1</div>
+
+            <div class="glass-card">
+                <h2>Galerie des visuels</h2>
+                <p>Rendus photoréalistes du distributeur dans ses quatre déclinaisons chromatiques, produits à partir de l'assemblage SolidWorks finalisé.</p>
+
+                <div class="render-gallery">
+                    <img
+                        src="https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-du-futur/main/Rendus/front.jpg"
+                        alt="Vue de face — coloris neutre"
+                        class="wide"
+                        onerror="this.style.display='none'"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-du-futur/main/Rendus/dome.jpg"
+                        alt="Vue dôme"
+                        onerror="this.style.display='none'"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-du-futur/main/Rendus/base.jpg"
+                        alt="Vue base"
+                        onerror="this.style.display='none'"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-du-futur/main/Rendus/front-rose.jpg"
+                        alt="Coloris rose"
+                        onerror="this.style.display='none'"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-du-futur/main/Rendus/front-menthe.jpg"
+                        alt="Coloris menthe"
+                        onerror="this.style.display='none'"
+                    />
+                    <img
+                        src="https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-du-futur/main/Rendus/front-orange.jpg"
+                        alt="Coloris orange"
+                        onerror="this.style.display='none'"
+                    />
+                </div>
+
+                <div class="color-swatches">
+                    <div class="swatch"><div class="swatch-dot" style="background:#f9a8d4;"></div>Rose</div>
+                    <div class="swatch"><div class="swatch-dot" style="background:#6ee7b7;"></div>Menthe</div>
+                    <div class="swatch"><div class="swatch-dot" style="background:#fdba74;"></div>Orange</div>
+                    <div class="swatch"><div class="swatch-dot" style="background:#c4b5fd;"></div>Violet</div>
+                </div>
+            </div>
+
+            <!-- Détail technique -->
+            <div class="section-label">Détail technique — Axe rotatif</div>
+
+            <div class="glass-card">
+                <h2>Pièce principale modélisée</h2>
+
+                <div class="sf-block">
+                    <div class="sf-title">Fonction</div>
+                    <div class="sf-item">Entraîne la rotation du mécanisme de distribution par actionnement du levier.</div>
+                    <div class="sf-item">Achemine le bonbon depuis le réservoir jusqu'à la coupelle de récupération.</div>
+                    <div class="sf-item">S'assemble sans outil avec la structure principale par emboîtement.</div>
+                </div>
+
+                <div class="sf-block">
+                    <div class="sf-title">Contraintes de conception</div>
+                    <div class="sf-item">Jeux fonctionnels maîtrisés pour une rotation fluide sans blocage.</div>
+                    <div class="sf-item">Tolérances compatibles avec l'impression FDM (± 0,3 mm).</div>
+                    <div class="sf-item">Matériau PLA alimentaire — surfaces en contact indirect avec les bonbons.</div>
+                    <div class="sf-item">Géométrie optimisée pour limiter les supports d'impression.</div>
+                </div>
+
+                <div class="sf-block">
+                    <div class="sf-title">Livrables</div>
+                    <div class="sf-item">Fichier part SolidWorks (.SLDPRT) versionné dans le dépôt.</div>
+                    <div class="sf-item">Mise en plan avec cotations fonctionnelles.</div>
+                    <div class="sf-item">Export STL pour impression 3D et GLB pour la visualisation web.</div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="glass-card">
+                    <h2>Stack technique</h2>
+                    <p>Outils utilisés pour la modélisation et les rendus du projet.</p>
+                    <div class="tags">
+                        <span class="tag purple">SolidWorks 2024</span>
+                        <span class="tag purple">Part & Assembly</span>
+                        <span class="tag purple">Drawing</span>
+                        <span class="tag">STL / GLB export</span>
+                        <span class="tag">FDM 3D Print</span>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <h2>Projet Coco Bonbons</h2>
+                    <p>Distributeur automatique de bonbons designé et fabriqué dans le cadre du cours Usine du Futur à l'ENSIM.</p>
+                    <a href="/" class="contact-link mono">Voir le site du projet →</a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
