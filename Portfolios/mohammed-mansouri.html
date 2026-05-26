@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr" data-direction="atelier">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mohammed Mansouri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f4f3ee;
+            --paper: #faf9f5;
+            --ink: #15140f;
+            --ink-2: #46443c;
+            --ink-3: #84807a;
+            --hair: rgba(20, 19, 14, 0.10);
+            --accent: #FD5F9F;
+            --accent-2: #7C5CFF;
+            --font-display: 'Instrument Serif', serif;
+            --font-body: 'Manrope', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --glass-bg: rgba(250, 249, 245, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 30px 80px rgba(30, 28, 20, 0.08), 0 2px 6px rgba(30, 28, 20, 0.05);
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; padding: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 0;
+            background:
+                radial-gradient(800px 600px at 80% -10%, rgba(253, 95, 159, 0.08), transparent 60%),
+                radial-gradient(600px 500px at -10% 110%, rgba(124, 92, 255, 0.06), transparent 60%);
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            position: relative; z-index: 1;
+        }
+
+        header { margin-bottom: 72px; }
+
+        .h-display {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 400;
+            line-height: 0.9;
+            margin: 0 0 16px 0;
+        }
+        .h-display em { font-style: italic; color: var(--accent); }
+
+        .h-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .h-eyebrow::before {
+            content: "";
+            width: 24px; height: 1px;
+            background: currentColor; opacity: 0.5;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 32px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        .grid .glass-card { margin-bottom: 0; }
+
+        .mono {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-2);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--hair);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            color: var(--ink-2);
+        }
+        .tag.accent { background: rgba(253, 95, 159, 0.12); color: var(--accent); }
+        .tag.purple { background: rgba(124, 92, 255, 0.10); color: var(--accent-2); }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0 0 20px 0;
+        }
+        h3 {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin: 0 0 16px 0;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: var(--ink-2);
+            font-size: 15px;
+        }
+        p:last-child { margin-bottom: 0; }
+
+        .contact-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        .contact-link:hover { opacity: 0.8; }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-label::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--hair);
+        }
+
+        .contribution-row {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--hair);
+        }
+        .contribution-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .contrib-num {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--accent);
+            min-width: 28px;
+            padding-top: 2px;
+        }
+
+        .contrib-body { flex: 1; }
+        .contrib-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+        .contrib-desc {
+            font-size: 13px;
+            color: var(--ink-3);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .sf-block {
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+        .sf-block:last-child { margin-bottom: 0; }
+
+        .sf-title {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+
+        .sf-item {
+            font-size: 13px;
+            color: var(--ink-2);
+            line-height: 1.6;
+            padding: 5px 0;
+            display: flex;
+            gap: 10px;
+        }
+        .sf-item::before {
+            content: "—";
+            color: var(--ink-3);
+            flex-shrink: 0;
+        }
+
+        .constraint-block {
+            border-left: 2px solid var(--accent-2);
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+        .constraint-block:last-child { margin-bottom: 0; }
+        .constraint-title {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-2);
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+
+        .future-card {
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.06), rgba(253, 95, 159, 0.06));
+            border: 1px dashed rgba(124, 92, 255, 0.3);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .future-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .future-text h3 { margin-bottom: 6px; }
+        .future-text p { margin: 0; font-size: 14px; }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 48px 16px; }
+            .glass-card { padding: 28px 24px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+        <header>
+            <div class="h-eyebrow">Portfolio Étudiant · Coco Bonbons</div>
+            <h1 class="h-display">Mohammed <em>Mansouri</em></h1>
+            <p class="mono">Ingénieur Informatique en Alternance — 4A Info Alt · ENSIM 2026</p>
+        </header>
+
+        <main>
+
+            <!-- À propos -->
+            <div class="glass-card">
+                <h2>À propos</h2>
+                <p class="mono" style="color: var(--accent); margin-bottom: 20px; font-size: 12px; letter-spacing: 0.08em;">Communication & Design visuel</p>
+                <p>
+                    J'ai pris en charge la <strong>communication visuelle du projet Coco Bonbons</strong> :
+                    conception d'un visuel destiné aux réseaux sociaux et au grand public,
+                    co-rédaction d'un document de référence pour la stratégie de communication,
+                    et production d'une vidéo de présentation du distributeur.
+                </p>
+                <p>
+                    Mon travail a consisté à traduire l'univers gourmand et ludique de Coco Bonbons
+                    en supports visuels accessibles et percutants. J'ai réalisé une <strong>fiche publication Canva</strong>
+                    intégrant les informations de contact de la marque ainsi qu'un QR code pointant
+                    directement vers le site de vente du distributeur. J'ai veillé à respecter les
+                    principes d'<strong>accessibilité, d'ergonomie</strong> et la
+                    <strong>charte graphique</strong> du produit tout au long du projet.
+                </p>
+                <div class="tags" style="margin-top: 20px;">
+                    <span class="tag accent">Communication visuelle</span>
+                    <span class="tag accent">Réseaux sociaux</span>
+                    <span class="tag purple">Canva</span>
+                    <span class="tag purple">Charte graphique</span>
+                    <span class="tag">Accessibilité</span>
+                    <span class="tag">4A Info Alt</span>
+                    <span class="tag">ENSIM 2026</span>
+                </div>
+            </div>
+
+            <!-- Contributions -->
+            <div class="section-label">Contributions au projet</div>
+
+            <div class="glass-card">
+                <h2>Mes rôles sur Coco Bonbons</h2>
+                <div class="contribution-row">
+                    <span class="contrib-num">01</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Fiche publication réseaux sociaux (Canva)</div>
+                        <p class="contrib-desc">Conception d'un visuel de communication destiné aux réseaux sociaux et au grand public. Le post présente le distributeur Coco Bonbons, intègre les coordonnées de la marque et un QR code renvoyant vers le site de vente en ligne. Réalisé avec Canva en respectant la charte graphique.</p>
+                    </div>
+                </div>
+                <div class="contribution-row">
+                    <span class="contrib-num">02</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Document de référence communication</div>
+                        <p class="contrib-desc">Co-rédaction d'un document de cadrage rassemblant les recherches menées et la vision stratégique de la communication de la marque. Réalisé en collaboration avec Thomas Hyaumet, ce document sert de référentiel partagé pour assurer la cohérence des supports produits par l'équipe.</p>
+                    </div>
+                </div>
+                <div class="contribution-row">
+                    <span class="contrib-num">03</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Vidéo produit — version globale</div>
+                        <p class="contrib-desc">Production d'une vidéo de présentation du distributeur dans sa version complète, destinée à valoriser le produit auprès d'un large public.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vidéo en cours -->
+            <div class="future-card">
+                <div class="future-icon">🎬</div>
+                <div class="future-text">
+                    <h3>En cours — Vidéo produit Coco Bonbons</h3>
+                    <p>Production de la vidéo de présentation globale du distributeur, destinée à valoriser le produit auprès d'un public large.</p>
+                </div>
+            </div>
+
+            <!-- Apports personnels -->
+            <div class="section-label">Apports personnels</div>
+
+            <div class="glass-card">
+                <h2>Ce que ce projet m'a apporté</h2>
+
+                <div class="sf-block">
+                    <div class="sf-title">Communication à destination du grand public</div>
+                    <p style="font-size: 14px; color: var(--ink-2); line-height: 1.7; margin: 0;">
+                        Concevoir un post réseaux sociaux pour Coco Bonbons m'a demandé d'adopter
+                        un regard orienté utilisateur : rendre l'information immédiatement lisible,
+                        donner envie, et faciliter le passage à l'acte via le QR code. Cette approche
+                        m'a sensibilisé aux enjeux de la conversion et de l'ergonomie visuelle
+                        sur les formats courts.
+                    </p>
+                </div>
+
+                <div class="sf-block">
+                    <div class="sf-title">Respect d'une charte graphique et accessibilité</div>
+                    <p style="font-size: 14px; color: var(--ink-2); line-height: 1.7; margin: 0;">
+                        Travailler dans un cadre contraint — couleurs, typographie et ton imposés
+                        par la marque — m'a appris à faire preuve de créativité dans les limites
+                        de l'identité visuelle existante. J'ai intégré les principes d'accessibilité
+                        (contrastes, lisibilité) dès la conception plutôt que comme une contrainte
+                        de fin de production.
+                    </p>
+                </div>
+
+                <div class="sf-block">
+                    <div class="sf-title">Production documentaire pour l'équipe</div>
+                    <p style="font-size: 14px; color: var(--ink-2); line-height: 1.7; margin: 0;">
+                        La co-rédaction du document de référence communication m'a permis de
+                        structurer et formaliser une vision commune avec mon collègue, pour que
+                        chacun puisse s'appuyer sur un socle partagé. C'est un exercice de
+                        synthèse et d'écriture professionnelle que je n'avais pas eu l'occasion
+                        de pratiquer dans ce contexte.
+                    </p>
+                </div>
+
+                <div class="sf-block" style="margin-bottom: 0;">
+                    <div class="sf-title">Coordination avec une équipe pluridisciplinaire</div>
+                    <p style="font-size: 14px; color: var(--ink-2); line-height: 1.7; margin: 0;">
+                        Pour assurer la cohérence entre le visuel produit et les autres livrables
+                        du groupe (fiche produit, documentation technique, CAO), j'ai dû m'informer
+                        sur les caractéristiques du distributeur et aligner ma communication avec
+                        les autres pôles du projet.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Productions réalisées -->
+            <div class="section-label">Productions réalisées</div>
+
+            <div class="glass-card">
+                <h2>Livrables de communication</h2>
+
+                <div class="sf-block">
+                    <div class="sf-title">Visuel réseaux sociaux — Canva</div>
+                    <div class="sf-item">Post conçu pour les réseaux sociaux et la communication grand public.</div>
+                    <div class="sf-item">Présentation du distributeur de bonbons Coco Bonbons et de ses atouts.</div>
+                    <div class="sf-item">Intégration des coordonnées de la marque (téléphone, site web).</div>
+                    <div class="sf-item">QR code renvoyant vers le site de vente en ligne du distributeur.</div>
+                    <div class="sf-item">Respect de la charte graphique, des principes d'accessibilité et d'ergonomie visuelle.</div>
+                </div>
+
+                <div class="sf-block">
+                    <div class="sf-title">Document de référence communication</div>
+                    <div class="sf-item">Recherches sur les pratiques de communication pour un produit grand public.</div>
+                    <div class="sf-item">Formalisation de la vision et de la stratégie de communication de la marque.</div>
+                    <div class="sf-item">Rédigé en collaboration avec Thomas Hyaumet, servant de référentiel pour l'ensemble de l'équipe.</div>
+                </div>
+
+                <div class="sf-block">
+                    <div class="sf-title">Vidéo produit — en cours</div>
+                    <div class="sf-item">Production d'une vidéo de présentation globale du distributeur.</div>
+                    <div class="sf-item">Destinée à valoriser le produit auprès d'un public large.</div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
