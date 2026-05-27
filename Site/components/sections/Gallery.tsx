@@ -76,7 +76,7 @@ export default function Gallery() {
           <div className="tile t2">
             <Image 
               key={`${palette}-Axe`}
-              src={getImageUrl("Axe", palette)} 
+              src={getImageUrl("axe", palette)}
               alt="Dôme" 
               fill 
               style={{ objectFit: "cover" }} 
@@ -88,7 +88,7 @@ export default function Gallery() {
           <div className="tile t3">
             <Image 
               key={`${palette}-base`}
-              src={getImageUrl("base", palette)} 
+              src={getImageUrl("Distributeur", palette)}
               alt="Base" 
               fill 
               style={{ objectFit: "cover" }} 
@@ -100,7 +100,7 @@ export default function Gallery() {
           <div className="tile t4">
             <Image 
               key={`${palette}-bonbons`}
-              src={getImageUrl("bonbons", palette)} 
+              src={getImageUrl("Distributeur", palette)}
               alt="Bonbons" 
               fill 
               style={{ objectFit: "cover" }} 
