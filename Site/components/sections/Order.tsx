@@ -41,10 +41,9 @@ export default function Order() {
           <div className="price">149<small>€ TTC</small></div>
           <div className="price-meta">Livraison France incluse · Paiement simulé</div>
           <ul>
-            <li>Distributeur usiné, dôme borosilicate</li>
+            <li>Distributeur usiné, dôme en verre</li>
             <li>Boîte cadeau kraft tamponnée à la main</li>
             <li>Sachet de bonbons surprise inclus</li>
-            <li>Numéro de série gravé sous le socle</li>
             <li>Garantie atelier 4 ans</li>
           </ul>
           <button className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }} onClick={handleOrder}>
