@@ -61,53 +61,45 @@ export default function Gallery() {
         </div>
         <div className="gallery">
           <div className="tile t1">
-            <Image 
-              key={`${palette}-front`}
-              src={getImageUrl("front", palette)} 
-              alt="Vue frontale" 
-              fill 
-              style={{ objectFit: "cover" }} 
-              sizes="(max-width: 760px) 100vw, 40vw" 
-              priority 
+            <Image
+              key={`${palette}-assemblage`}
+              src={getImageUrl("assemblage", palette)}
+              alt="Vue frontale"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ height: "100%", width: "auto" }}
+              priority
               onError={() => handleError("front", palette)}
             />
             <span className="tag">01 · vue frontale</span>
           </div>
-          <div className="tile t2">
-            <Image 
-              key={`${palette}-Axe`}
-              src={getImageUrl("axe", palette)}
-              alt="Dôme" 
-              fill 
-              style={{ objectFit: "cover" }} 
-              sizes="(max-width: 760px) 100vw, 30vw" 
-              onError={() => handleError("Axe", palette)}
-            />
-            <span className="tag">02 · Axe</span>
-          </div>
-          <div className="tile t3">
-            <Image 
-              key={`${palette}-base`}
-              src={getImageUrl("Distributeur", palette)}
-              alt="Base" 
-              fill 
-              style={{ objectFit: "cover" }} 
-              sizes="(max-width: 760px) 100vw, 30vw" 
-              onError={() => handleError("base", palette)}
-            />
-            <span className="tag">03 · base</span>
-          </div>
-          <div className="tile t4">
-            <Image 
-              key={`${palette}-bonbons`}
-              src={getImageUrl("Distributeur", palette)}
-              alt="Bonbons" 
-              fill 
-              style={{ objectFit: "cover" }} 
-              sizes="(max-width: 760px) 100vw, 60vw" 
-              onError={() => handleError("bonbons", palette)}
-            />
-            <span className="tag" style={{ color: "var(--ink)" }}>04 · bonbons</span>
+          <div className="gallery-right">
+            <div className="tile t2">
+              <Image
+                key={`${palette}-axe`}
+                src={getImageUrl("axe", palette)}
+                alt="Axe"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ height: "100%", width: "auto" }}
+              />
+              <span className="tag">02 · Axe</span>
+            </div>
+            <div className="tile t3">
+              <Image
+                key={`${palette}-base`}
+                src={getImageUrl("base", palette)}
+                alt="Base"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ height: "100%", width: "auto" }}
+                onError={() => handleError("base", palette)}
+              />
+              <span className="tag">03 · base</span>
+            </div>
           </div>
         </div>
       </div>
