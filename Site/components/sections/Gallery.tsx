@@ -75,15 +75,15 @@ export default function Gallery() {
           </div>
           <div className="tile t2">
             <Image 
-              key={`${palette}-dome`}
-              src={getImageUrl("dome", palette)} 
+              key={`${palette}-Axe`}
+              src={getImageUrl("Axe", palette)} 
               alt="Dôme" 
               fill 
               style={{ objectFit: "cover" }} 
               sizes="(max-width: 760px) 100vw, 30vw" 
-              onError={() => handleError("dome", palette)}
+              onError={() => handleError("Axe", palette)}
             />
-            <span className="tag">02 · dôme</span>
+            <span className="tag">02 · Axe</span>
           </div>
           <div className="tile t3">
             <Image 
