@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr" data-direction="atelier">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Coco Bonbons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f4f3ee;
+            --paper: #faf9f5;
+            --ink: #15140f;
+            --ink-2: #46443c;
+            --ink-3: #84807a;
+            --hair: rgba(20, 19, 14, 0.10);
+            --accent: #FD5F9F;
+            --accent-2: #7C5CFF;
+            --font-display: 'Instrument Serif', serif;
+            --font-body: 'Manrope', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --glass-bg: rgba(250, 249, 245, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 30px 80px rgba(30, 28, 20, 0.08), 0 2px 6px rgba(30, 28, 20, 0.05);
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; padding: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 0;
+            background:
+                radial-gradient(800px 600px at 80% -10%, rgba(253, 95, 159, 0.08), transparent 60%),
+                radial-gradient(600px 500px at -10% 110%, rgba(124, 92, 255, 0.06), transparent 60%);
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            position: relative; z-index: 1;
+        }
+
+        header { margin-bottom: 72px; }
+
+        .h-display {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 400;
+            line-height: 0.9;
+            margin: 0 0 16px 0;
+        }
+        .h-display em { font-style: italic; color: var(--accent); }
+
+        .h-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .h-eyebrow::before {
+            content: "";
+            width: 24px; height: 1px;
+            background: currentColor; opacity: 0.5;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 32px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        .grid .glass-card { margin-bottom: 0; }
+
+        .mono {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-2);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--hair);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            color: var(--ink-2);
+        }
+        .tag.accent { background: rgba(253, 95, 159, 0.12); color: var(--accent); }
+        .tag.purple { background: rgba(124, 92, 255, 0.10); color: var(--accent-2); }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0 0 20px 0;
+        }
+        h3 {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin: 0 0 16px 0;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: var(--ink-2);
+            font-size: 15px;
+        }
+        p:last-child { margin-bottom: 0; }
+
+        .contact-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        .contact-link:hover { opacity: 0.8; }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-label::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--hair);
+        }
+
+        .contribution-row {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--hair);
+        }
+        .contribution-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .contrib-num {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--accent);
+            min-width: 28px;
+            padding-top: 2px;
+        }
+
+        .contrib-body { flex: 1; }
+        .contrib-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+        .contrib-desc {
+            font-size: 13px;
+            color: var(--ink-3);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .sf-block {
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+        .sf-block:last-child { margin-bottom: 0; }
+
+        .sf-title {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+
+        .sf-item {
+            font-size: 13px;
+            color: var(--ink-2);
+            line-height: 1.6;
+            padding: 5px 0;
+            display: flex;
+            gap: 10px;
+        }
+        .sf-item::before {
+            content: "—";
+            color: var(--ink-3);
+            flex-shrink: 0;
+        }
+
+        .render-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .render-item {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: var(--hair);
+        }
+
+        .render-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .render-caption {
+            padding: 10px 14px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--ink-3);
+        }
+
+        .plan-img-wrap {
+            margin-top: 24px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            background: #fff;
+        }
+
+        .plan-img-wrap img {
+            width: 100%;
+            display: block;
+        }
+
+        .plan-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .plan-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .plan-meta-item .label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+        }
+
+        .plan-meta-item .value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+        .spec-table tr {
+            border-bottom: 1px solid var(--hair);
+        }
+        .spec-table tr:last-child {
+            border-bottom: none;
+        }
+        .spec-table td {
+            padding: 10px 0;
+            font-size: 13px;
+            color: var(--ink-2);
+            line-height: 1.5;
+        }
+        .spec-table td:first-child {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--ink-3);
+            width: 40%;
+            padding-right: 16px;
+        }
+
+        .highlight-block {
+            background: linear-gradient(135deg, rgba(253, 95, 159, 0.06), rgba(124, 92, 255, 0.04));
+            border: 1px dashed rgba(253, 95, 159, 0.3);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .highlight-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .highlight-text h3 { margin-bottom: 6px; color: var(--accent); }
+        .highlight-text p { margin: 0; font-size: 14px; }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 48px 16px; }
+            .glass-card { padding: 28px 24px; }
+            .grid { grid-template-columns: 1fr; }
+            .render-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+        <header>
+            <div class="h-eyebrow">Portfolio Étudiant · Coco Bonbons</div>
+            <h1 class="h-display">Victor <em>QUILGARS</em></h1>
+            <p class="mono">Ingénieur Informatique en Alternance — 4A Info Alt · ENSIM 2026</p>
+        </header>
+
+        <main>
+
+            <!-- À propos -->
+            <div class="glass-card">
+                <h2>À propos</h2>
+                <p class="mono" style="color: var(--accent); margin-bottom: 20px; font-size: 12px; letter-spacing: 0.08em;">Modélisation 3D · Fabrication · Rendu 3D</p>
+                <p>
+                    Étudiant en 4e année en ingénierie informatique en alternance à l'ENSIM (promotion 2026),
+                    je contribue au projet <strong>Coco Bonbons</strong> au sein de l'équipe de modélisation 3D,
+                    fabrication du produit et rendu 3D.
+                </p>
+                <p>
+                    Ma contribution principale porte sur la conception et la fabrication du <strong>socle</strong>
+                    qui supporte l'ensemble du distributeur. Pièce unique en bois usiné par fraisage CNC,
+                    il accueille également la gravure du nom du produit — <em>Coco Bonbons</em> — incisée
+                    directement dans la matière.
+                </p>
+                <div class="tags" style="margin-top: 20px;">
+                    <span class="tag accent">Modélisation 3D</span>
+                    <span class="tag accent">Rendu 3D</span>
+                    <span class="tag purple">Fraisage CNC</span>
+                    <span class="tag purple">Usinage bois</span>
+                    <span class="tag">Gravure</span>
+                    <span class="tag">SolidWorks</span>
+                    <span class="tag">4A Info Alt</span>
+                    <span class="tag">ENSIM 2026</span>
+                </div>
+            </div>
+
+            <!-- Highlight socle -->
+            <div class="highlight-block">
+                <div class="highlight-icon">🪵</div>
+                <div class="highlight-text">
+                    <h3>Pièce signature du projet</h3>
+                    <p style="color: var(--ink-2);">
+                        Le socle est la seule pièce en bois du distributeur — les deux autres parties sont imprimées en 3D.
+                        Ce choix matériau permet un usinage précis par fraisage et confère au produit une identité
+                        artisanale distinctive.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contributions -->
+            <div class="section-label">Contributions au projet</div>
+
+            <div class="glass-card">
+                <h2>Mes rôles sur Coco Bonbons</h2>
+                <div class="contribution-row">
+                    <span class="contrib-num">01</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Modélisation 3D du socle</div>
+                        <p class="contrib-desc">Conception du socle en bois sous SolidWorks — pièce de base accueillant les deux autres parties imprimées en 3D. Définition des cotes, tolérances et zones d'assemblage.</p>
+                    </div>
+                </div>
+                <div class="contribution-row">
+                    <span class="contrib-num">02</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Fabrication par fraisage CNC</div>
+                        <p class="contrib-desc">Préparation et usinage du socle sur fraiseuse numérique. Choix du bois comme matériau adapté à l'usinage, contrairement aux pièces supérieures réalisées par impression 3D.</p>
+                    </div>
+                </div>
+                <div class="contribution-row">
+                    <span class="contrib-num">03</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Gravure "Coco Bonbons"</div>
+                        <p class="contrib-desc">Intégration de l'inscription <em>Coco Bonbons</em> gravée directement dans le bois par la fraiseuse — identité visuelle du produit portée par la pièce elle-même.</p>
+                    </div>
+                </div>
+                <div class="contribution-row">
+                    <span class="contrib-num">04</span>
+                    <div class="contrib-body">
+                        <div class="contrib-title">Rendus 3D du produit</div>
+                        <p class="contrib-desc">Production des rendus photoréalistes du distributeur complet, en plusieurs coloris, illustrant les finitions et l'identité visuelle du produit Coco Bonbons.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spécifications du socle -->
+            <div class="section-label">Spécifications techniques — socle</div>
+
+            <div class="glass-card">
+                <h2>Conception du socle bois</h2>
+
+                <div class="sf-block">
+                    <div class="sf-title">Matériau & procédé de fabrication</div>
+                    <div class="sf-item">Bois usiné par fraisage CNC — seule pièce non imprimée du distributeur.</div>
+                    <div class="sf-item">Matériau choisi pour sa rigidité, son esthétique et son aptitude à l'usinage précis.</div>
+                    <div class="sf-item">Compatibilité alimentaire du bois : surface non traitée chimiquement ou vernie contact alimentaire.</div>
+                </div>
+
+                <div class="sf-block">
+                    <div class="sf-title">Rôle fonctionnel</div>
+                    <div class="sf-item">Support stable pour l'ensemble du distributeur (corps + dôme imprimés en 3D).</div>
+                    <div class="sf-item">Interface entre le produit et la surface de pose — assure stabilité et équilibre de l'ensemble.</div>
+                    <div class="sf-item">Zones d'assemblage précises pour l'accueil des pièces imprimées supérieures.</div>
+                </div>
+
+                <div class="sf-block">
+                    <div class="sf-title">Gravure "Coco Bonbons"</div>
+                    <div class="sf-item">Inscription du nom du produit gravée par la fraiseuse directement dans le bois.</div>
+                    <div class="sf-item">Intégration dans le modèle 3D pour garantir la position et la profondeur de la gravure.</div>
+                    <div class="sf-item">Finition sans post-traitement chimique pour rester en conformité sanitaire.</div>
+                </div>
+            </div>
+
+            <!-- Architecture 3 parties -->
+            <div class="glass-card">
+                <h2>Architecture du produit</h2>
+                <p>Le distributeur Coco Bonbons est composé de trois parties distinctes, chacune relevant d'un procédé de fabrication différent.</p>
+
+                <table class="spec-table">
+                    <tr>
+                        <td>Partie 01 — Socle</td>
+                        <td><strong>Bois usiné (fraisage CNC)</strong> — ma contribution. Support de l'ensemble, avec gravure "Coco Bonbons".</td>
+                    </tr>
+                    <tr>
+                        <td>Partie 02 — Vis de distribution</td>
+                        <td>Impression 3D — vis/levier rotatif : pièce unique actionnée à la main qui fait tomber les bonbons. <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-3);">Non réalisée par mes soins.</span></td>
+                    </tr>
+                    <tr>
+                        <td>Partie 03 — Corps central</td>
+                        <td>Impression 3D — accueille la vis de distribution et le bocal en verre servant de réservoir à bonbons. <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-3);">Non réalisé par mes soins.</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Plan technique -->
+            <div class="section-label">Plan technique</div>
+
+            <div class="glass-card">
+                <h2>Plan de fabrication — Base distributeur</h2>
+                <p>Plan coté réalisé sous SolidWorks, à l'échelle 1:5, servant de référence pour l'usinage CNC du socle en bois.</p>
+
+                <div class="plan-meta">
+                    <div class="plan-meta-item">
+                        <span class="label">Matériau</span>
+                        <span class="value">Bois</span>
+                    </div>
+                    <div class="plan-meta-item">
+                        <span class="label">Dimensions</span>
+                        <span class="value">177,41 × 205,00 × 10 mm</span>
+                    </div>
+                    <div class="plan-meta-item">
+                        <span class="label">Perçages</span>
+                        <span class="value">2 × Ø 4,50 mm</span>
+                    </div>
+                    <div class="plan-meta-item">
+                        <span class="label">Congés</span>
+                        <span class="value">R10 mm</span>
+                    </div>
+                    <div class="plan-meta-item">
+                        <span class="label">Échelle</span>
+                        <span class="value">1:5</span>
+                    </div>
+                </div>
+
+                <div class="plan-img-wrap">
+                    <img src="../Rendus/plan-base.png" alt="Plan de fabrication — Base distributeur">
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
