@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr" data-direction="atelier">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Lucas Martinelle · Coco Bonbons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f4f3ee;
+            --paper: #faf9f5;
+            --ink: #15140f;
+            --ink-2: #46443c;
+            --ink-3: #84807a;
+            --hair: rgba(20, 19, 14, 0.10);
+            --accent: #FD5F9F;
+            --accent-2: #7C5CFF;
+            --font-display: 'Instrument Serif', serif;
+            --font-body: 'Manrope', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --glass-bg: rgba(250, 249, 245, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 30px 80px rgba(30, 28, 20, 0.08), 0 2px 6px rgba(30, 28, 20, 0.05);
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; padding: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed; inset: 0;
+            pointer-events: none; z-index: 0;
+            background:
+                radial-gradient(800px 600px at 80% -10%, rgba(253, 95, 159, 0.08), transparent 60%),
+                radial-gradient(600px 500px at -10% 110%, rgba(124, 92, 255, 0.06), transparent 60%);
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            position: relative; z-index: 1;
+        }
+
+        header { margin-bottom: 72px; }
+
+        .h-display {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 400;
+            line-height: 0.9;
+            margin: 0 0 16px 0;
+        }
+        .h-display em { font-style: italic; color: var(--accent); }
+
+        .h-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .h-eyebrow::before {
+            content: "";
+            width: 24px; height: 1px;
+            background: currentColor; opacity: 0.5;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 32px;
+        }
+
+        .mono {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--ink-2);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--hair);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            color: var(--ink-2);
+        }
+        .tag.accent { background: rgba(253, 95, 159, 0.12); color: var(--accent); }
+        .tag.purple { background: rgba(124, 92, 255, 0.10); color: var(--accent-2); }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0 0 20px 0;
+        }
+        h3 {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin: 0 0 16px 0;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: var(--ink-2);
+            font-size: 15px;
+        }
+        p:last-child { margin-bottom: 0; }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-top: 48px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-label::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--hair);
+        }
+
+        .contribution-row {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--hair);
+        }
+        .contribution-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .contrib-num {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 32px;
+            padding-top: 4px;
+        }
+
+        .contrib-body { flex: 1; }
+
+        .sf-block {
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 24px;
+        }
+        .sf-block:last-child { margin-bottom: 0; }
+
+        .sf-title {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+
+        .sf-item {
+            font-size: 13px;
+            color: var(--ink-2);
+            line-height: 1.6;
+            padding: 5px 0;
+            display: flex;
+            gap: 10px;
+        }
+        .sf-item::before {
+            content: "—";
+            color: var(--ink-3);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .wrap { padding: 48px 16px; }
+            .glass-card { padding: 28px 24px; }
+            .contribution-row { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+        <header>
+            <div class="h-eyebrow">Portfolio Étudiant · Coco Bonbons</div>
+            <h1 class="h-display">Lucas <em>MARTINELLE</em></h1>
+            <p class="mono">Ingénierie usine du futur — ENSIM 2026</p>
+        </header>
+
+        <main>
+
+            <div class="glass-card">
+                <h2>À propos</h2>
+                <p class="mono" style="color: var(--accent); margin-bottom: 20px; font-size: 12px; letter-spacing: 0.08em;">Chef de Projet — Gestion, Planification & Documentation</p>
+                <p>
+                    Étudiant à l'ENSIM (promotion 2025/2026), j'ai assuré la coordination du projet
+                    <strong>Coco Bonbons</strong> de bout en bout : répartition des tâches entre les membres
+                    de l'équipe, suivi de l'avancement via un diagramme de Gantt maintenu à jour, et
+                    rédaction des documents de projet.
+                </p>
+                <p>
+                    Mon rôle a été de maintenir la cohérence d'ensemble entre les différents pôles
+                    (mécanique, informatique, documentation, communication) et de m'assurer que chaque
+                    livrable était produit dans les délais.
+                </p>
+                <div class="tags" style="margin-top: 20px;">
+                    <span class="tag accent">Gestion de projet</span>
+                    <span class="tag accent">Diagramme de Gantt</span>
+                    <span class="tag purple">Rédaction documentaire</span>
+                    <span class="tag purple">Coordination d'équipe</span>
+                    <span class="tag">ENSIM 2026</span>
+                </div>
+            </div>
+
+            <div class="section-label">Contributions au projet</div>
+
+            <div class="glass-card">
+                <h2>Mes rôles sur Coco Bonbons</h2>
+
+                <div class="contribution-row">
+                    <span class="contrib-num">01</span>
+                    <div class="contrib-body">
+                        <h2>Répartition & suivi des tâches</h2>
+                        <p>
+                            Identification des compétences de chaque membre et affectation des tâches
+                            en cohérence avec les profils — mécanique, informatique, design, documentation.
+                        </p>
+                        <div class="sf-block" style="border-left-color: var(--accent-2);">
+                            <div class="sf-title" style="color: var(--accent-2);">Méthode</div>
+                            <div class="sf-item">Découpage du projet en lots de travail distincts (mécanique, site, SAV, cahier des charges, communication).</div>
+                            <div class="sf-item">Attribution des responsabilités par domaine de compétence, avec points d'avancement réguliers en séance.</div>
+                            <div class="sf-item">Arbitrage des priorités et réallocation des tâches selon l'avancement réel du projet.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contribution-row">
+                    <span class="contrib-num">02</span>
+                    <div class="contrib-body">
+                        <h2>Diagramme de Gantt</h2>
+                        <p>
+                            Élaboration et mise à jour continue du planning général du projet sous
+                            forme de diagramme de Gantt, couvrant l'ensemble des phases de conception,
+                            fabrication et livraison.
+                        </p>
+                        <div class="sf-block">
+                            <div class="sf-title">Contenu du planning</div>
+                            <div class="sf-item">Jalons identifiés : cahier des charges, modélisation 3D, impression, assemblage, site web, soutenances.</div>
+                            <div class="sf-item">Mise à jour à chaque séance pour refléter l'avancement réel et anticiper les risques de retard.</div>
+                            <div class="sf-item">Outil de communication partagé avec l'ensemble de l'équipe pour maintenir une vision commune du calendrier.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contribution-row">
+                    <span class="contrib-num">03</span>
+                    <div class="contrib-body">
+                        <h2>Rédaction de documents</h2>
+                        <p>
+                            Participation à la production des livrables documentaires du projet :
+                            comptes-rendus, rapports d'avancement et documents de synthèse.
+                        </p>
+                        <div class="sf-block" style="border-left-color: var(--accent-2);">
+                            <div class="sf-title" style="color: var(--accent-2);">Documents produits</div>
+                            <div class="sf-item">Comptes-rendus de séances et synthèses des décisions prises en équipe.</div>
+                            <div class="sf-item">Rapports d'avancement transmis aux encadrants pédagogiques.</div>
+                            <div class="sf-item">Contribution à la structuration des livrables transverses (présentation, bilan de projet).</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
