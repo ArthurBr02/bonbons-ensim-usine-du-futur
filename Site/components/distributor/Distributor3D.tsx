@@ -10,7 +10,7 @@ function Model() {
   const { scene } = useGLTF(MODEL_URL);
   return (
     <Center>
-      <group rotation={[0, Math.PI, 0]}>
+      <group>
         <primitive object={scene} />
       </group>
     </Center>

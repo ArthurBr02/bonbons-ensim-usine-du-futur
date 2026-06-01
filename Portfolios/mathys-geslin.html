@@ -271,6 +271,34 @@
             .glass-card { padding: 28px 24px; }
             .grid { grid-template-columns: 1fr; }
         }
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .stack-item {
+            background: var(--hair);
+            border-radius: 12px;
+            padding: 16px 18px;
+        }
+
+        .stack-item .stack-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: 6px;
+        }
+
+        .stack-item .stack-value {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink);
+        }
     </style>
 </head>
 <body>
@@ -367,6 +395,39 @@
                         Lorsqu’une main est détectée, un moteur actionne automatiquement le mécanisme de distribution. Ces modèles offrent une utilisation plus
                         moderne et hygiénique, car ils limitent le contact direct avec la machine. Certains dispositifs plus avancés intègrent également des
                         écrans, des systèmes de paiement ou une connexion à une application mobile.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compétences -->
+            <div class="section-label">Compétences</div>
+
+            <div class="glass-card">
+                <h2>Compétences développées</h2>
+                <div class="stack-grid">
+                    <div class="stack-item">
+                        <div class="stack-label">Gestion de projet</div>
+                        <div class="stack-value">Planification d'équipe</div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-label">Rédaction technique</div>
+                        <div class="stack-value">Cahier des charges</div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-label">Contrôle qualité</div>
+                        <div class="stack-value">Relecture & harmonisation</div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-label">Design appliqué</div>
+                        <div class="stack-value">Identité & palette</div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-label">Logiciel 3D</div>
+                        <div class="stack-value">SolidWorks Composer</div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-label">Développement</div>
+                        <div class="stack-value">Volet commercial</div>
                     </div>
                 </div>
             </div>

@@ -64,15 +64,14 @@ export default function Gallery() {
             <Image
               key={`${palette}-assemblage`}
               src={getImageUrl("assemblage", palette)}
-              alt="Vue frontale"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ height: "100%", width: "auto" }}
+              alt="Vue de face"
+              fill
+              sizes="(max-width: 760px) 100vw, 66vw"
+              style={{ objectFit: "cover" }}
               priority
               onError={() => handleError("front", palette)}
             />
-            <span className="tag">01 · vue frontale</span>
+            <span className="tag">01 · vue de face</span>
           </div>
           <div className="gallery-right">
             <div className="tile t2">
@@ -80,10 +79,9 @@ export default function Gallery() {
                 key={`${palette}-axe`}
                 src={getImageUrl("axe", palette)}
                 alt="Axe"
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ height: "100%", width: "auto" }}
+                fill
+                sizes="(max-width: 760px) 100vw, 33vw"
+                style={{ objectFit: "cover" }}
               />
               <span className="tag">02 · Axe</span>
             </div>
@@ -92,10 +90,9 @@ export default function Gallery() {
                 key={`${palette}-base`}
                 src={getImageUrl("base", palette)}
                 alt="Base"
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ height: "100%", width: "auto" }}
+                fill
+                sizes="(max-width: 760px) 100vw, 33vw"
+                style={{ objectFit: "cover" }}
                 onError={() => handleError("base", palette)}
               />
               <span className="tag">03 · base</span>
