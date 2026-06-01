@@ -4,6 +4,7 @@ import Specs from "@/components/sections/Specs";
 import SectionMarquee from "@/components/sections/SectionMarquee";
 import Demo from "@/components/sections/Demo";
 import Gallery from "@/components/sections/Gallery";
+import VideoSection from "@/components/sections/VideoSection";
 import About from "@/components/sections/About";
 import Order from "@/components/sections/Order";
 import Faq from "@/components/sections/Faq";
@@ -24,6 +25,7 @@ export default function Home() {
         <Demo />
         <Gallery />
         <SectionMarquee />
+        <VideoSection />
         <About />
         <Order />
         <Faq />
