@@ -11,15 +11,15 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 const ACCENT_OPTIONS = [
   { val: '#FD5F9F', name: 'Bonbon' },
   { val: '#ff5a8a', name: 'Fraise' },
-  { val: '#5dd6a8', name: 'Pistache' },
-  { val: '#7c5cff', name: 'Myrtille' },
+  { val: '#5b853e', name: 'Pistache' },
+  { val: '#a591e5', name: 'Myrtille' },
   { val: '#0f1117', name: 'Encre' },
 ];
 const ACCENT_INK = {
   '#FD5F9F': '#1a1303',
   '#ff5a8a': '#2c0010',
-  '#5dd6a8': '#082417',
-  '#7c5cff': '#0d0628',
+  '#5b853e': '#082417',
+  '#a591e5': '#0d0628',
   '#0f1117': '#fafaf5',
 };
 const DISPLAY_FONTS = ['Instrument Serif', 'Newsreader', 'DM Serif Display'];

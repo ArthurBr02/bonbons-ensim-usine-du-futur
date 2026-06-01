@@ -51,7 +51,7 @@ SAV_EMAIL=sav@cocobonbons.fr    # adresse de réception SAV
 ## Phase A — Palette de couleurs (Gallery)
 
 ### Décisions
-- **4 swatches** : Rose (`#FD5F9F`), Menthe (`#5dd6a8`), Violet (`#7c5cff`), Orange (`#ff7043`)
+- **4 swatches** : Rose (`#FD5F9F`), Menthe (`#5b853e`), Violet (`#a591e5`), Orange (`#ffb827`)
 - **URL pattern** : `{BASE_URL}{view}-{palette}.jpg` (ex: `front-rose.jpg`)
 - **Fallback** : `onError` sur `<Image>` → revient à `{BASE_URL}{view}.jpg` si le fichier coloré n'existe pas encore
 - **State** : `useState<string | null>(null)` (null = aucune palette sélectionnée, images originales)

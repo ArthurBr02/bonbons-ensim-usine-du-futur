@@ -7,9 +7,9 @@ const BASE = "https://raw.githubusercontent.com/ArthurBr02/bonbons-ensim-usine-d
 
 const PALETTES = [
   { key: "rose", label: "Rose", color: "#FD5F9F" },
-  { key: "menthe", label: "Menthe", color: "#5dd6a8" },
-  { key: "violet", label: "Violet", color: "#7c5cff" },
-  { key: "orange", label: "Orange", color: "#ff7043" },
+  { key: "menthe", label: "Menthe", color: "#5b853e" },
+  { key: "violet", label: "Violet", color: "#a591e5" },
+  { key: "orange", label: "Orange", color: "#ffb827" },
 ];
 
 export default function Gallery() {
