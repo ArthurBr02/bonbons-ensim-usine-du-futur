@@ -3,7 +3,7 @@ const SPECS = [
   { name: "Dôme", sub: "Verre Bonne maman soufflé, traitement anti-rayure.", val: "Verre alimentaire" },
   { name: "Capacité", sub: "Environ 300 g de bonbons standards, calibre 12–18 mm.", val: "~300 g" },
   { name: "Mécanisme", sub: "Roue de dosage usinée, libération par rotation manuelle.", val: "Manuel · 1 tour" },
-  { name: "Dimensions", sub: "Hauteur totale, dôme inclus, sur socle pédestal.", val: "38 × 18 × 18 cm" },
+  { name: "Dimensions", sub: "Dimensions du produit, dôme inclus, sur socle pédestal.", val: "18 × 21 × 20 cm (L x P x H)" },
   { name: "Poids", sub: "Pesé à vide, sans bonbons ni emballage.", val: "1,2 kg" },
   { name: "Origine", sub: "Usiné, assemblé et calibré dans notre atelier en Loire-Atlantique.", val: "Made in FR" },
 ];
