@@ -69,6 +69,7 @@ export default function Gallery() {
               sizes="(max-width: 760px) 100vw, 66vw"
               style={{ objectFit: "cover" }}
               priority
+              unoptimized
               onError={() => handleError("front", palette)}
             />
             <span className="tag">01 · vue de face</span>
@@ -82,6 +83,7 @@ export default function Gallery() {
                 fill
                 sizes="(max-width: 760px) 100vw, 33vw"
                 style={{ objectFit: "cover" }}
+                unoptimized
               />
               <span className="tag">02 · Axe</span>
             </div>
@@ -93,6 +95,7 @@ export default function Gallery() {
                 fill
                 sizes="(max-width: 760px) 100vw, 33vw"
                 style={{ objectFit: "cover" }}
+                unoptimized
                 onError={() => handleError("base", palette)}
               />
               <span className="tag">03 · base</span>
