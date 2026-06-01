@@ -246,24 +246,29 @@
             margin-bottom: 10px;
         }
 
-        .future-card {
-            background: linear-gradient(135deg, rgba(124, 92, 255, 0.06), rgba(253, 95, 159, 0.06));
-            border: 1px dashed rgba(124, 92, 255, 0.3);
-            border-radius: 16px;
-            padding: 28px 32px;
-            margin-bottom: 32px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
+        .poster-card {
+            margin: 0 0 32px 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 16px;
+            box-shadow: var(--glass-shadow);
         }
-
-        .future-icon {
-            font-size: 32px;
-            flex-shrink: 0;
+        .poster-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
         }
-
-        .future-text h3 { margin-bottom: 6px; }
-        .future-text p { margin: 0; font-size: 14px; }
+        .poster-card figcaption {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            line-height: 1.6;
+            color: var(--ink-3);
+            padding: 16px 12px 8px;
+        }
 
         @media (max-width: 600px) {
             .wrap { padding: 48px 16px; }
@@ -340,14 +345,14 @@
                 </div>
             </div>
 
-            <!-- Vidéo en cours -->
-            <div class="future-card">
-                <div class="future-icon">🎬</div>
-                <div class="future-text">
-                    <h3>En cours — Vidéo produit Coco Bonbons</h3>
-                    <p>Production de la vidéo de présentation globale du distributeur, destinée à valoriser le produit auprès d'un public large.</p>
-                </div>
-            </div>
+            <!-- Affiche publicitaire -->
+            <div class="section-label">Affiche publicitaire</div>
+
+            <figure class="poster-card">
+                <img src="../Communication/CocoBonbons_affichePub.png"
+                     alt="Affiche publicitaire Coco Bonbons — visuel réseaux sociaux avec QR code">
+                <figcaption>Affiche publicitaire Coco Bonbons — visuel réseaux sociaux réalisé sous Canva, intégrant les coordonnées de la marque et le QR code vers le site de vente.</figcaption>
+            </figure>
 
             <!-- Apports personnels -->
             <div class="section-label">Apports personnels</div>
