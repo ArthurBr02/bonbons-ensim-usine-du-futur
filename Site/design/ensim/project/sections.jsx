@@ -312,7 +312,7 @@
               <li>Distributeur usiné, dôme en verr</li>
               <li>Boîte cadeau kraft tamponnée à la main</li>
               <li>Sachet de bonbons surprise inclus</li>
-              <li>Garantie atelier 4 ans</li>
+              <li>Garantie atelier 2 ans</li>
             </ul>
             <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={onOrder}>
               Ajouter au panier <span className="arrow">→</span>

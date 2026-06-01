@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="hero-meta">
             <div><span>1,2&nbsp;kg</span>Plastique délicieux</div>
             <div><span>300&nbsp;g</span>Capacité bonbons</div>
-            <div><span>4&nbsp;ans</span>Garantie atelier</div>
+            <div><span>2&nbsp;ans</span>Garantie atelier</div>
           </div>
         </div>
         <div className="hero-visual">
