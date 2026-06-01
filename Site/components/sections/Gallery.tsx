@@ -64,7 +64,7 @@ export default function Gallery() {
             <Image
               key={`${palette}-assemblage`}
               src={getImageUrl("assemblage", palette)}
-              alt="Vue de face"
+              alt="Vue d'ensemble"
               fill
               sizes="(max-width: 760px) 100vw, 66vw"
               style={{ objectFit: "cover" }}
@@ -72,7 +72,7 @@ export default function Gallery() {
               unoptimized
               onError={() => handleError("front", palette)}
             />
-            <span className="tag">01 · vue de face</span>
+            <span className="tag">01 · vue d'ensemble</span>
           </div>
           <div className="gallery-right">
             <div className="tile t2">
