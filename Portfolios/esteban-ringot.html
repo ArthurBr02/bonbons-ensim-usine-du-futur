@@ -17,7 +17,7 @@
             --ink-3: #84807a;
             --hair: rgba(20, 19, 14, 0.10);
             --accent: #FD5F9F;
-            --accent-2: #a591e5;
+            --accent-2: #7abd69;
             --font-display: 'Instrument Serif', serif;
             --font-body: 'Manrope', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
@@ -265,6 +265,43 @@
         .future-text h3 { margin-bottom: 6px; }
         .future-text p { margin: 0; font-size: 14px; }
 
+        .voir-projet {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            text-decoration: none;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .voir-projet:hover { opacity: 0.7; }
+        .voir-projet::after { content: " ↗"; }
+
+        #img-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.78);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        #img-modal img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 8px 48px rgba(0, 0, 0, 0.5);
+        }
+
         @media (max-width: 600px) {
             .wrap { padding: 48px 16px; }
             .glass-card { padding: 28px 24px; }
@@ -314,6 +351,7 @@
                     <div class="contrib-body">
                         <div class="contrib-title">Création du Logo sur Affinity</div>
                         <p class="contrib-desc">Conception graphique et vectorisation du logo officiel du produit, pensé pour être déclinable sur tous les supports (print, web et gravure machine).</p>
+                        <button class="voir-projet" onclick="showImage('../Rendus/Estehb/LOGO.png')">Voir projet</button>
                     </div>
                 </div>
                 <div class="contribution-row">
@@ -321,6 +359,7 @@
                     <div class="contrib-body">
                         <div class="contrib-title">Design de la Charte Graphique sur Figma</div>
                         <p class="contrib-desc">Définition des choix typographiques, de la palette de couleurs et des composants graphiques structurant l'identité visuelle de Coco Bonbons.</p>
+                        <button class="voir-projet" onclick="showImage('../Rendus/Estehb/design_system.png')">Voir projet</button>
                     </div>
                 </div>
                 <div class="contribution-row">
@@ -335,6 +374,7 @@
                     <div class="contrib-body">
                         <div class="contrib-title">Conception des Affiches Promotionnelles</div>
                         <p class="contrib-desc">Participation active à la création, à la mise en page et à l'iconographie des différentes affiches de communication pour le projet.</p>
+                        <a class="voir-projet" href="https://drive.google.com/drive/folders/1GwC7WXZ47OXO8Mgzy0vFdIodppNPlXsr" target="_blank" rel="noopener">Voir projet</a>
                     </div>
                 </div>
             </div>
@@ -385,5 +425,20 @@
 
         </main>
     </div>
+
+    <!-- Lightbox modal -->
+    <div id="img-modal" onclick="this.style.display='none'">
+        <img id="modal-img" src="" alt="Aperçu projet">
+    </div>
+
+    <script>
+        function showImage(src) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('img-modal').style.display = 'flex';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') document.getElementById('img-modal').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
