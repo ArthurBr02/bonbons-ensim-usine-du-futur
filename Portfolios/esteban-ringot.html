@@ -430,15 +430,5 @@
     <div id="img-modal" onclick="this.style.display='none'">
         <img id="modal-img" src="" alt="Aperçu projet">
     </div>
-
-    <script>
-        function showImage(src) {
-            document.getElementById('modal-img').src = src;
-            document.getElementById('img-modal').style.display = 'flex';
-        }
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') document.getElementById('img-modal').style.display = 'none';
-        });
-    </script>
 </body>
 </html>
