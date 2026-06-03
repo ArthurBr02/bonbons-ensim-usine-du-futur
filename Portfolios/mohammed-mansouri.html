@@ -272,6 +272,52 @@
             padding: 16px 12px 8px;
         }
 
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .link-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 18px;
+            border: 1px solid var(--hair);
+            border-radius: 14px;
+            text-decoration: none;
+            background: rgba(250, 249, 245, 0.4);
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .link-row:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(30, 28, 20, 0.06);
+        }
+        .link-num {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--accent);
+            min-width: 24px;
+        }
+        .link-body { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+        .link-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--ink);
+        }
+        .link-desc {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--ink-3);
+        }
+        .link-arrow {
+            font-size: 16px;
+            color: var(--ink-3);
+            transition: color 0.2s;
+        }
+        .link-row:hover .link-arrow { color: var(--accent); }
+
         @media (max-width: 600px) {
             .wrap { padding: 48px 16px; }
             .glass-card { padding: 28px 24px; }
@@ -432,6 +478,40 @@
                     <div class="sf-title">Vidéo produit</div>
                     <div class="sf-item">Production d'une vidéo de présentation globale du distributeur.</div>
                     <div class="sf-item">Destinée à valoriser le produit auprès d'un public large.</div>
+                </div>
+            </div>
+
+            <!-- Réalisation en binôme ou en équipe -->
+            <div class="section-label">Réalisation en binôme ou en équipe</div>
+
+            <div class="glass-card">
+                <h2>Liens vers les livrables</h2>
+                <p>Productions réalisées en binôme ou en équipe, accessibles via les liens ci-dessous.</p>
+                <div class="link-list">
+                    <a class="link-row" href="https://www.canva.com/design/DAHKHxUZ7fA/hwd-Mdzm3foruAnpnjq5yw/edit" target="_blank" rel="noopener noreferrer">
+                        <span class="link-num">01</span>
+                        <span class="link-body">
+                            <span class="link-title">Fiche publicitaire (Canva)</span>
+                            <span class="link-desc">canva.com</span>
+                        </span>
+                        <span class="link-arrow">↗</span>
+                    </a>
+                    <a class="link-row" href="https://drive.google.com/file/d/1jTMFzebmzN0HvAnaZji-58ylH0B-IXwS/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                        <span class="link-num">02</span>
+                        <span class="link-body">
+                            <span class="link-title">Fiche produit</span>
+                            <span class="link-desc">drive.google.com</span>
+                        </span>
+                        <span class="link-arrow">↗</span>
+                    </a>
+                    <a class="link-row" href="https://www.youtube.com/shorts/6ovQQHLqo24" target="_blank" rel="noopener noreferrer">
+                        <span class="link-num">03</span>
+                        <span class="link-body">
+                            <span class="link-title">Vidéo de présentation</span>
+                            <span class="link-desc">youtube.com</span>
+                        </span>
+                        <span class="link-arrow">↗</span>
+                    </a>
                 </div>
             </div>
 
